@@ -25,9 +25,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "./src/assets/css/feather.css",
+              "./src/assets/css/themify-icons.css",
+              "./node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "ec2aa152-7ed0-405f-8b13-50d0a84b30dd"
   }
 }

@@ -1,0 +1,25 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item nav-item-border" *ngFor="let menu of menuItems">
+      <a class="nav-link"
+         data-toggle="collapse"
+         [attr.href]="'#' + menu.label"
+         aria-expanded="false"
+         [attr.aria-controls]="menu.label"
+         >
+        <i class="styleIcon {{menu.icon}}"></i>
+        <span class="menu-title">{{menu.label}}</span>
+      </a>
+
+      <ng-template *ngIf="menu.children && menu.children.length > 0">
+        <div class="collapse" [attr.id]="menu.label">  <!-- Using menu label for unique IDs -->
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item" *ngFor="let child of menu.children">
+              <a class="nav-link" >{{child.label}}</a>
+            </li>
+          </ul>
+        </div>
+      </ng-template>
+    </li>
+  </ul>
+</nav>
