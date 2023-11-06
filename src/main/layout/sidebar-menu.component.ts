@@ -19,6 +19,9 @@ export class SidebarMenuComponent implements OnInit {
       return [
         new ItemMenu('Dashboard','/main/dashboard','bi bi-menu-button-wide'),
         new ItemMenu('User','/main/user','bi bi-people'),
+        new ItemMenu('Class','/main/class','bi bi-backpack4'),
+        new ItemMenu('Project','/main/project','bi bi-columns'),
+        new ItemMenu('Subject','/main/subject','bi bi-amd'),
         new ItemMenu('Setting','','bi bi-gear-fill'),
       ]
     }

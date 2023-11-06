@@ -3,6 +3,9 @@ import { RouterModule } from '@angular/router';
 import { MainComponent } from './main.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
+import { ClassComponent } from './class/class.component';
+import { ProjectComponent } from './project/project.component';
+import { SubjectComponent } from './subject/subject.component';
 
 @NgModule({
   imports: [
@@ -10,7 +13,10 @@ import { UserComponent } from './user/user.component';
           {path: 'main',component: MainComponent,
                 children:[
                   {path:'dashboard',component: DashboardComponent},
-                  {path:'user',component: UserComponent}
+                  {path:'user',component: UserComponent},
+                  {path:'class',component: ClassComponent},
+                  {path:'project',component: ProjectComponent},
+                  {path:'subject',component: SubjectComponent}
                 ]
           }
       ])

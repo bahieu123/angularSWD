@@ -1,7 +1,6 @@
 export class AuthenticateModul {
   username: string | undefined;
   password: string | undefined;
-
 }
 
 export class TokenData {

@@ -24733,6 +24733,14 @@ dl li {
   padding-bottom: 1rem;
 }
 
+.body-1{
+  background-color: #F2F6F7;
+}
+.body-2{
+  margin: 20 20 20 20;
+  background-color: white;
+  border-radius: 20px;
+}
 .nav-pills .nav-link {
   border: 1px solid #CED4DA;
   padding: .5rem 1.75rem;
