@@ -7,6 +7,7 @@ import { ItemMenu } from '../shared/ItemMenu';
 })
 export class SidebarMenuComponent implements OnInit {
     menuItems: ItemMenu[] | undefined;
+    selectedMenuItem: ItemMenu | null = null;
 
     constructor() {}
 
@@ -17,10 +18,13 @@ export class SidebarMenuComponent implements OnInit {
     getMenuItem(): ItemMenu[] {
       return [
         new ItemMenu('Dashboard','/main/dashboard','bi bi-menu-button-wide'),
-        new ItemMenu('User','','bi bi-people'),
+        new ItemMenu('User','/main/user','bi bi-people'),
         new ItemMenu('Setting','','bi bi-gear-fill'),
-
       ]
+    }
+
+    selectMenuItem(menu: ItemMenu): void {
+      this.selectedMenuItem = menu;
     }
 
 }

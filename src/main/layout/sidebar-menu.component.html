@@ -1,11 +1,13 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
-    <li class="nav-item nav-item-border" *ngFor="let menu of menuItems">
+    <li class="nav-item nav-item-border" *ngFor="let menu of menuItems" [ngClass]="{'selected': menu === selectedMenuItem}">
       <a class="nav-link"
          data-toggle="collapse"
          [attr.href]="'#' + menu.label"
          aria-expanded="false"
+         [routerLink]="menu.route"
          [attr.aria-controls]="menu.label"
+         (click)="selectMenuItem(menu)"
          >
         <i class="styleIcon {{menu.icon}}"></i>
         <span class="menu-title">{{menu.label}}</span>
@@ -14,7 +16,7 @@
       <ng-template *ngIf="menu.children && menu.children.length > 0">
         <div class="collapse" [attr.id]="menu.label">  <!-- Using menu label for unique IDs -->
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item" *ngFor="let child of menu.children">
+            <li class="nav-item" *ngFor="let child of menu.children" >
               <a class="nav-link" >{{child.label}}</a>
             </li>
           </ul>

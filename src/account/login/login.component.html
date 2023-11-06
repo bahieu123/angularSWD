@@ -15,10 +15,29 @@
       <h1>Login to access to<br />your account</h1>
 
       <div class="login-form">
-        <form action="">
-          <input type="email" placeholder="E-mail Address">
-          <input type="password" placeholder="Password">
-
+        <form #loginForm="ngForm">
+          <input type="text"
+                 placeholder="E-mail Address"
+                 [(ngModel)]="inputUserAndPass.username"
+                 name="userName"
+                 required
+                 #username="ngModel"
+                 [ngClass]="(username.invalid && (username.dirty || username.touched)) ? 'ng-invalid ng-dirty' : '' "
+                 >
+                 <div *ngIf="username.touched && !username.valid">
+                  <span class="error-message-span mes-err" *ngIf="username.errors && username.errors['required']">{{'Không được để trống'}}</span>
+                  </div>
+          <input type="password"
+                 placeholder="Password"
+                 [(ngModel)]="inputUserAndPass.password"
+                 name="passWord"
+                 required
+                 #PassWord="ngModel"
+                 [ngClass]="(PassWord.invalid && (PassWord.dirty || PassWord.touched)) ? 'ng-invalid ng-dirty' : '' "
+                 >
+                 <div *ngIf="PassWord.touched && !PassWord.valid">
+                  <span class="error-message-span mes-err" *ngIf="PassWord.errors && PassWord.errors['required']">{{'Không được để trống'}}</span>
+                  </div>
           <div class="remember-form">
             <input type="checkbox">
             <span>Remember me</span>
@@ -27,7 +46,7 @@
             <a href="#">Forgot Password ?</a>
           </div>
 
-          <button type="submit">LOG-IN</button>
+          <button type="submit" (click)="onLogin(loginForm)">LOG-IN</button>
 
         </form>
       </div>

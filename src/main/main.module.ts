@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { MainRoutingModel } from './main.routing';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { UserComponent } from './user/user.component';
 //layout
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     FooterComponent,
     HeaderComponent,
     SidebarMenuComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserComponent
   ]
 })
 export class MainModule { }

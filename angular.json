@@ -29,7 +29,10 @@
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "./src/assets/css/feather.css",
               "./src/assets/css/themify-icons.css",
-              "./node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+              "./node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
@@ -65,6 +68,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angularSWD:build",
+            "port": 3000
+          },
           "configurations": {
             "production": {
               "browserTarget": "angularSWD:build:production"
@@ -99,7 +106,7 @@
             "scripts": []
           }
         }
-      }
+      },
     }
   },
   "cli": {
