@@ -17,6 +17,7 @@ import { SubjectComponent } from './subject/subject.component';
 // primng
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
+import { ToolbarModule } from 'primeng/toolbar';
 @NgModule({
   imports: [
     CommonModule,
@@ -25,7 +26,8 @@ import { ButtonModule } from 'primeng/button';
     ModalModule.forChild(),
     //primng
     TableModule,
-    ButtonModule
+    ButtonModule,
+    ToolbarModule
   ],
   declarations: [
     MainComponent,
