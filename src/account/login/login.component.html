@@ -17,7 +17,7 @@
       <div class="login-form">
         <form #loginForm="ngForm">
           <input type="text"
-                 placeholder="E-mail Address"
+                 placeholder="User Name"
                  [(ngModel)]="inputUserAndPass.username"
                  name="userName"
                  required
@@ -49,6 +49,7 @@
           <button type="submit" (click)="onLogin(loginForm)">LOG-IN</button>
 
         </form>
+        <div class="g-signin2" data-width="300" data-height="200" data-longtitle="true"></div>
       </div>
 
     </div>

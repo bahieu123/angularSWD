@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
         this.tokenData.roles = decodedToken.rol;
         this.tokenData.username = decodedToken.preferred_username;
         this.tokenData.email = decodedToken.email;
+        this.tokenData.name = decodedToken.name;
 
         // Lưu token vào local storage
         localStorage.setItem('token', result.accessToken);

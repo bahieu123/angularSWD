@@ -9,12 +9,14 @@ export class TokenData {
   roles: number[];
   username: string;
   email: string;
+  name: string;
 
   constructor() {
     this.email = '';
     this.roles = [];
     this.username = '';
     this.accessToken = '';
+    this.name = '';
   }
 }
 
