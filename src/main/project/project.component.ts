@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectMemberServiceService } from 'src/service/ProjectMemberService.service';
-import { ListProjectMember } from '../model/models';
+import { ProjectServiceService } from 'src/service/ProjectService.service';
+import { ListProject } from '../model/models';
 
 @Component({
   selector: 'app-project',
@@ -9,18 +9,18 @@ import { ListProjectMember } from '../model/models';
 })
 export class ProjectComponent implements OnInit {
 
-  listProjectMember: ListProjectMember[]=[]
-  constructor(private _ProjectMemberServiceService: ProjectMemberServiceService) { }
+  ListProject: ListProject[]=[]
+  constructor(private _ProjectServiceService: ProjectServiceService) { }
 
   ngOnInit(): void {
     this.GetAllProject();
   }
 
   GetAllProject(): void{
-    this._ProjectMemberServiceService.getAllProjectMember()
+    this._ProjectServiceService.getAllProject()
     .subscribe((result) => {
-      this.listProjectMember = result;
-      console.log(this.listProjectMember);  
+      this.ListProject = result;
+      console.log(this.ListProject);  
     })
   }
 

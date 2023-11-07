@@ -28,15 +28,18 @@ export class ListSubject{
 }
 
 export class ListProject{
+  id: number | undefined
   name: string | undefined
-  user_id:number | undefined
   class_id:number | undefined
   team_leader_id:number | undefined
   english_name: string | undefined
   vietnamese_name: string | undefined
-  status: string | undefined
+  status: number | undefined
   created_by:string | undefined
   updated_by:string | undefined
+  tlFirstName: string |undefined  
+  tlLastName: string |undefined
+  class_name: string |undefined
 }
 
 export class ListProjectMember{
