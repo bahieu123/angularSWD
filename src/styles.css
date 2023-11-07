@@ -24779,6 +24779,10 @@ border-radius: 10px;
   color: #4B49AC;
 
 }
+.filter{
+  padding-left: 200px;
+  margin-top: -40px;
+}
 .body-register{
   background-color: #302D5A;
   padding-left: 750px;
