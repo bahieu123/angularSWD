@@ -3,11 +3,11 @@
     <div class="body-2">
       <p-toolbar>
         <div class="p-toolbar-group-start">
-          <h3>List Class Manager</h3>
+          <h3>List Student</h3>
         </div>
         <ng-template pTemplate="end">
           <p-button
-            label="Add Class"
+            label="Add Student"
             icon="pi pi-plus"
             icon="pi pi-trash"
             styleClass="p-button-success mr-2"
@@ -22,7 +22,7 @@
     <div class="body-2">
       <p-table
         #dt1
-        [value]="listClass"
+        [value]="listClassStudent"
         dataKey="id"
         [rows]="10"
         [showCurrentPageReport]="true"
@@ -57,53 +57,42 @@
               </div>
             </th>
             <th style="min-width: 15rem">
+              <div class="flex align-items-center">Student Name</div>
+            </th>
+            <th style="min-width: 15rem">
               <div class="flex align-items-center">Class Name</div>
             </th>
             <th style="min-width: 15rem">
-              <div class="flex align-items-center">Description</div>
+              <div class="flex align-items-center">Create By</div>
             </th>
             <th style="min-width: 15rem">
-              <div class="flex align-items-center">Teacher</div>
+              <div class="flex align-items-center">Update By</div>
             </th>
             <th style="min-width: 15rem">
-              <div class="flex align-items-center">Subject Code</div>
-            </th>
-            <th style="min-width: 15rem">
-              <div class="flex align-items-center">Subject Name</div>
-            </th>
-            <th style="min-width: 15rem">
-              <div class="flex align-items-center">Start Date</div>
-            </th>
-            <th style="min-width: 15rem">
-              <div class="flex align-items-center">End Date</div>
+              <div class="flex align-items-center">Status</div>
             </th>
           </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-class let-rowIndex="rowIndex">
+        <ng-template pTemplate="body" let-classStudent let-rowIndex="rowIndex">
           <tr>
             <td>
               {{ rowIndex + 1 }}
             </td>
             <td>
-              {{ class.name }}
+              {{ classStudent.userFirstName + " " + classStudent.userLastName }}
             </td>
             <td>
-              {{ class.description }}
+              {{ classStudent.className }}
             </td>
             <td>
-              {{ class.userFirstName + " " + class.userLastName }}
+              {{ classStudent.created_by }}
             </td>
             <td>
-              {{ class.subjectCode }}
+              {{ classStudent.updated_by }}
             </td>
             <td>
-              {{ class.subjectName }}
-            </td>
-            <td>
-              {{ class.start_date | date:'dd-MM-yyyy'}}
-            </td>
-            <td>
-              {{ class.end_date | date:'dd-MM-yyyy'}}
+              <p style="color: green;" *ngIf="classStudent.status == 1">Enable</p>
+              <p style="color: red;" *ngIf="classStudent.status == 0">Disable</p>
             </td>
           </tr>
         </ng-template>

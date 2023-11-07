@@ -12,12 +12,15 @@ import { UserComponent } from './user/user.component';
 import { ClassComponent } from './class/class.component';
 import { ProjectComponent } from './project/project.component';
 import { SubjectComponent } from './subject/subject.component';
+import { ClassStudentComponent } from './classStudent/classStudent.component';
+import { AssignmentComponent } from './assignment/assignment.component';
 //layout
 
 // primng
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
+import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubject/CreateAndUpdateSubject.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -28,6 +31,7 @@ import { ToolbarModule } from 'primeng/toolbar';
     TableModule,
     ButtonModule,
     ToolbarModule
+
   ],
   declarations: [
     MainComponent,
@@ -38,7 +42,10 @@ import { ToolbarModule } from 'primeng/toolbar';
     UserComponent,
     ClassComponent,
     ProjectComponent,
-    SubjectComponent
+    SubjectComponent,
+    ClassStudentComponent,
+    AssignmentComponent,
+    CreateAndUpdateSubjectComponent
   ]
 })
 export class MainModule { }

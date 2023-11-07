@@ -6,7 +6,7 @@
           <h3>List Subject Manager</h3>
       </div>
         <ng-template pTemplate="end">
-          <p-button label="Add Subject" icon="pi pi-plus" icon="pi pi-trash" styleClass="p-button-success mr-2"></p-button>
+          <p-button label="Add Subject" icon="pi pi-plus" styleClass="p-button-success mr-2" (click)="CreateSubject()"></p-button>
           <p-button styleClass="p-button-danger mr-2" icon="pi pi-trash"></p-button>
       </ng-template>
       </p-toolbar>
@@ -55,6 +55,11 @@
                     Discription
                 </div>
             </th>
+            <th style="min-width:15rem">
+              <div class="flex align-items-center">
+                  Action
+              </div>
+          </th>
           </tr>
       </ng-template>
       <ng-template pTemplate="body" let-subject let-rowIndex="rowIndex">
@@ -63,13 +68,16 @@
                 {{rowIndex + 1}}
               </td>
               <td>
-                 {{subject.subject_code}}
+                 <a (click)="DetailSubject(subject)" style="color: cadetblue;">{{subject.subject_code}}</a>
               </td>
               <td>
                 {{subject.subject_name}}
               </td>
               <td>
                 {{subject.description}}
+              </td>
+              <td>
+                <p-button styleClass="p-button-danger mr-2" icon="pi pi-trash"></p-button>
               </td>
           </tr>
       </ng-template>
