@@ -94,7 +94,7 @@
               {{ assignment.updated_by }}
             </td>
             <td>
-              <p-button  icon="pi pi-trash" styleClass="p-button-danger mr-2" (click)="createAssignment()"></p-button>
+              <p-button  icon="pi pi-trash" styleClass="p-button-danger mr-2" (click)="deleteAssignment(assignment.id)"></p-button>
               <p-button  icon="bi bi-pencil-square" styleClass="p-button-outlined mr-2" (click)="updateAssignment(assignment)"></p-button>
             </td>
           </tr>

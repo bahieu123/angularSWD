@@ -64,7 +64,10 @@ export class CreateAndUpdateComponent implements OnInit {
 
 
   saveAssignment(): void {
-    debugger
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Token not found. Please authenticate first.');
+    }
     if (this.assignmentId) {
       this.inputUpdate.id = this.assignmentId;
       this._assignmentService

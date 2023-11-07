@@ -68,4 +68,16 @@ export class AssignmentServiceService {
     return this.http.get<any>(apiUrl + `/assignments/GetAssignment/${id}`, { headers })
     .pipe(map(response => response.Data));
   }
+
+  deleteAssignment(id: number | undefined): Observable<any> {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Token not found. Please authenticate first.');
+    }
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.delete<any>(apiUrl + `/assignments/Delete/${id}`, { headers })
+  }
+  
 }
