@@ -14,6 +14,7 @@ import { ProjectComponent } from './project/project.component';
 import { SubjectComponent } from './subject/subject.component';
 import { ClassStudentComponent } from './classStudent/classStudent.component';
 import { AssignmentComponent } from './assignment/assignment.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //layout
 
 // primng
@@ -24,7 +25,9 @@ import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubjec
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule,
+    ReactiveFormsModule,
     MainRoutingModel,
     ModalModule.forChild(),
     //primng
