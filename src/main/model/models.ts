@@ -17,6 +17,7 @@ export class ListClass {
 }
 
 export class ListSubject{
+  id : number | undefined
   manager_id:number | undefined
   subject_code: string | undefined
   subject_name:string | undefined

@@ -24,4 +24,6 @@ getAllSubject(): Observable<ListSubject[]> {
     map(response => response.Data)
   );
 }
+
+
 }

@@ -24759,13 +24759,41 @@ border-radius: 10px;
   border: 1px solid #CED4DA;
   padding: .5rem 1.75rem;
 }
+.text-required{
+  color: red;
+}
+.btn-back{
+  background-color: #4B49AC;
+  width: 100px;
+  margin-right: 40px;
+  height: 45px;
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-top: 10px;
+  color: white;
+}
+.btn-back :hover{
+  width: 200px;
+  height: 45px;
+  border-radius: 10px;
+  color: #4B49AC;
 
+}
+.btn-back1{
+  margin-left: 20px;
+  background-color: #0B5ED7;
+}
 @media (max-width: 767px) {
   .nav-pills .nav-link {
     padding: .5rem .5rem;
   }
 }
-
+.create-body{
+  border-radius: 20px;
+  background-color: white;
+  padding: 20px 30px 20px 30px;
+  margin: 20px 30px 20px 30px;;
+}
 .nav-pills .nav-item {
   margin-right: 1rem;
 }

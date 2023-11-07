@@ -18,6 +18,9 @@ import { SubjectComponent } from './subject/subject.component';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
+import { CalendarModule } from 'primeng/calendar';
+
+import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubject/CreateAndUpdateSubject.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -27,7 +30,8 @@ import { ToolbarModule } from 'primeng/toolbar';
     //primng
     TableModule,
     ButtonModule,
-    ToolbarModule
+    ToolbarModule,
+    CalendarModule
   ],
   declarations: [
     MainComponent,
@@ -38,7 +42,8 @@ import { ToolbarModule } from 'primeng/toolbar';
     UserComponent,
     ClassComponent,
     ProjectComponent,
-    SubjectComponent
+    SubjectComponent,
+    CreateAndUpdateSubjectComponent
   ]
 })
 export class MainModule { }
