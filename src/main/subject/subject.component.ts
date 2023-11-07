@@ -43,6 +43,7 @@ export class SubjectComponent implements OnInit {
   }
 
   deleteSubject(data: ListSubject): void{
+    debugger
     this._subjectServiceService.SubjectDelete(data.id).subscribe(() => {
       this.GetAllSubject();
     })

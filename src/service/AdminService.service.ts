@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Singup } from 'src/main/model/models';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,8 @@ Authenticate(obj: any): Observable<any> {
   });
 }
 
-
+Singin(body: Singup): Observable<any> {
+  return this.http.post<any>(`http://localhost:8080/auth/signup`,body);
+}
 
 }

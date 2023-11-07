@@ -47,3 +47,10 @@ export class UpdateSubject{
   created_by:string | undefined
   created_date:Date | undefined
 }
+
+export class Singup{
+  username:string | undefined
+  password:string | undefined
+  name:string | undefined
+  email:string | undefined
+}

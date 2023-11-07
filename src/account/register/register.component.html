@@ -1,3 +1,62 @@
-<p>
-  register works!
-</p>
+<div class="body-register">
+  <div class="body-singin2">
+    <div class="body-singin1">
+      <form #singinForm="ngForm">
+
+        <label for="chk" aria-hidden="true">Sign up</label>
+        <input type="text"
+               name="userName"
+               placeholder="User name"
+               required
+               [(ngModel)]="inputSingin.username"
+               #username="ngModel"
+               [ngClass]="(username.invalid && (username.dirty || username.touched)) ? 'ng-invalid ng-dirty' : '' "
+              >
+              <div *ngIf="username.touched && !username.valid" class="valifrom">
+              <span class="error-message-span mes-err" *ngIf="username.errors && username.errors['required']">{{'Không được để trống'}}</span>
+              </div>
+
+
+        <input type="password"
+               name="pswd"
+               placeholder="Password"
+               required
+               [(ngModel)]="inputSingin.password"
+               #passWord="ngModel"
+               [ngClass]="(passWord.invalid && (passWord.dirty || passWord.touched)) ? 'ng-invalid ng-dirty' : '' "
+                />
+              <div *ngIf="passWord.touched && !passWord.valid" class="valifrom">
+              <span class="error-message-span mes-err" *ngIf="passWord.errors && passWord.errors['required']">{{'Không được để trống'}}</span>
+              </div>
+
+        <input type="Name"
+               name="pswd"
+               placeholder="Name"
+               required
+               [(ngModel)]="inputSingin.name"
+               #name1="ngModel"
+               [ngClass]="(name1.invalid && (name1.dirty || name1.touched)) ? 'ng-invalid ng-dirty' : '' "
+                />
+              <div *ngIf="name1.touched && !name1.valid" class="valifrom">
+              <span class="error-message-span mes-err" *ngIf="name1.errors && name1.errors['required']">{{'Không được để trống'}}</span>
+              </div>
+        <input type="email"
+               name="email"
+               placeholder="Email"
+               required
+               pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{1,})+$"
+               [(ngModel)]="inputSingin.email"
+               #emailModel="ngModel"
+               [ngClass]="(emailModel.invalid && (emailModel.dirty || emailModel.touched)) ? 'ng-invalid ng-dirty' : '' "
+                >
+              <div *ngIf="emailModel.touched && !emailModel.valid" class="valifrom">
+              <span class="error-message-span mes-err" *ngIf="emailModel.errors && emailModel.errors['required']">{{'Không được để trống'}}</span>
+              <span class="error-message-span mes-err" *ngIf="emailModel.errors && emailModel.errors['pattern']">{{'Không đúng cú pháp email'}}</span>
+              </div>
+        <button (click)="singin(singinForm)">Sign up</button>
+        <button class="">Back</button>
+      </form>
+    </div>
+</div>
+
+</div>

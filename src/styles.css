@@ -24779,6 +24779,12 @@ border-radius: 10px;
   color: #4B49AC;
 
 }
+.body-register{
+  background-color: #302D5A;
+  padding-left: 750px;
+  padding-top: 200px;
+  height: 1000px;
+}
 .btn-back1{
   margin-left: 20px;
   background-color: #0B5ED7;

@@ -60,8 +60,7 @@ export class CreateAndUpdateSubjectComponent implements OnInit {
   saveSubject(): void{
 
     if(this.subjectId){
-      this.inputUpdate.manager_id = this.subjectId;
-       this._subjectServiceService.UpdateSubject(this.inputUpdate)
+       this._subjectServiceService.UpdateSubject(this.subjectDetail)
        .subscribe(() =>{
         this._router.navigate(['/main/subject']);
       })
