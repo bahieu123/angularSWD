@@ -40,6 +40,14 @@ export class AssignmentComponent implements OnInit {
       }
     ]);
   }
+  
+  detailAssignment(data: UpdateAssignment): void {
+    this._router.navigate(['/main/assignment/createUpdate',
+      {
+        id: data.id
+      }
+    ]);
+  }
 
   clear(): void {
     this.getAllAssignmnet();

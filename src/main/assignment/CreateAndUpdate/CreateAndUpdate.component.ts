@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   AddNewAssignment,
+  GetAssignment,
   UpdateAssignment,
 } from 'src/main/model/assignmentModel';
 import { ListSubject } from 'src/main/model/models';
@@ -44,6 +45,7 @@ export class CreateAndUpdateComponent implements OnInit {
       }
     });
     this.GetAllSubject();
+    this.GetAssignment();
   }
 
   GetAllSubject(): void {
@@ -53,8 +55,16 @@ export class CreateAndUpdateComponent implements OnInit {
     });
   }
 
+  GetAssignment(): void {
+    this._assignmentService.detailAssignment(this.assignmentId).subscribe((result) => {
+      this.inputUpdate = result;
+      console.log(this.listSubject);
+    });
+  }
+
+
   saveAssignment(): void {
-    debugger;
+    debugger
     if (this.assignmentId) {
       this.inputUpdate.id = this.assignmentId;
       this._assignmentService
@@ -70,6 +80,7 @@ export class CreateAndUpdateComponent implements OnInit {
         });
     }
   }
+
 
   back(): void {
     this._router.navigate(['main/assignment']);

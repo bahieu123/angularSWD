@@ -60,7 +60,7 @@ CreateSubject(body: CreateAndUpdateSubject): Observable<any> {
   return this.http.get<any>(`http://localhost:8080/api/subjects/GetSubject/${id}`, { headers })
   .pipe(
     map(response => response.Data)
-  );;
+  );
 }
 
 SubjectDelete(id: number | undefined): Observable<any> {

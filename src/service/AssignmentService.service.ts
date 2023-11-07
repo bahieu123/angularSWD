@@ -54,7 +54,7 @@ export class AssignmentServiceService {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    return this.http.post<any>(apiUrl + `/assignments/Update`, body, { headers });
+    return this.http.put<any>(apiUrl + `/assignments/Update`, body, { headers });
   }
 
   detailAssignment(id: number | undefined): Observable<any> {
@@ -65,7 +65,7 @@ export class AssignmentServiceService {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
-    return this.http.post<any>(apiUrl + `/assignments/GetAssignment/${id}`, { headers });
-    
+    return this.http.get<any>(apiUrl + `/assignments/GetAssignment/${id}`, { headers })
+    .pipe(map(response => response.Data));
   }
 }
