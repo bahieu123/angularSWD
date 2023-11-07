@@ -6,7 +6,6 @@ import { UserComponent } from './user/user.component';
 import { ClassComponent } from './class/class.component';
 import { ProjectComponent } from './project/project.component';
 import { SubjectComponent } from './subject/subject.component';
-import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubject/CreateAndUpdateSubject.component';
 
 @NgModule({
   imports: [
@@ -17,8 +16,7 @@ import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubjec
                   {path:'user',component: UserComponent},
                   {path:'class',component: ClassComponent},
                   {path:'project',component: ProjectComponent},
-                  {path:'subject',component: SubjectComponent},
-                  {path:'subject/DetailSubject',component: CreateAndUpdateSubjectComponent}
+                  {path:'subject',component: SubjectComponent}
                 ]
           }
       ])

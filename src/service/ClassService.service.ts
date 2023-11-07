@@ -1,16 +1,22 @@
+import { TokenData } from './../account/Moduls/AccountModuls';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ListClass } from 'src/main/model/models';
+import { Observable, map } from 'rxjs';
+import { GetClass } from 'src/main/model/classModel';
+
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'Application/json' }),
+};
+const apiUrl = 'http://localhost:8080/api';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClassServiceService {
-  readonly APIUrl = 'http://localhost:8080/api/classes/GetAll?pageNo=0&pageSize=5'
-constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient) {}
 
-
-/* getAllClasses(): Observable<any[]> {
+  /* getAllClasses(): Observable<any[]> {
   debugger
   const requestOptions: RequestInit = {
     method: 'GET',
@@ -38,17 +44,30 @@ constructor(private http: HttpClient ) { }
   });
 } */
 
-getAllClasses(): Observable<any[]> {
-  // Lấy token từ local storage hoặc bất kỳ nguồn nào bạn lưu trữ
-  const token = localStorage.getItem('token');
-  if (!token) {
-    throw new Error('Token not found. Please authenticate first.');
-  }
-  // Đặt token vào tiêu đề của yêu cầu HTTP
-  const headers = new HttpHeaders({
-    'Authorization': `Bearer ${token}`
-  });
-  return this.http.get<any[]>(this.APIUrl, { headers });
-}
+  // getAllClasses(): Observable<any[]> {
+  //   // Lấy token từ local storage hoặc bất kỳ nguồn nào bạn lưu trữ
+  //   const token = localStorage.getItem('token');
+  //   if (!token) {
+  //     throw new Error('Token not found. Please authenticate first.');
+  //   }
+  //   // Đặt token vào tiêu đề của yêu cầu HTTP
+  //   const headers = new HttpHeaders({
+  //     Authorization: `Bearer ${token}`,
+  //   });
+  //   return this.http.get<any[]>(this.APIUrl, { headers });
+  // }
 
+  getAllClass():Observable<GetClass[]>{
+    const token = localStorage.getItem('token');
+    if (!token) {
+      throw new Error('Token not found. Please authenticate first.');
+    }
+    // Đặt token vào tiêu đề của yêu cầu HTTP
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`,
+    });
+    return this.http.get<any>(apiUrl+ "/classes/GetAll?pageNo=0&pageSize=999",{headers}).pipe(
+      map(response => response.Data)
+    );
+  }
 }
