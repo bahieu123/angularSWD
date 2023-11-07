@@ -20,6 +20,7 @@ import { AssignmentComponent } from './assignment/assignment.component';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
+import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubject/CreateAndUpdateSubject.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -29,8 +30,8 @@ import { ToolbarModule } from 'primeng/toolbar';
     //primng
     TableModule,
     ButtonModule,
-    ToolbarModule,
-    CalendarModule
+    ToolbarModule
+
   ],
   declarations: [
     MainComponent,
@@ -41,7 +42,10 @@ import { ToolbarModule } from 'primeng/toolbar';
     UserComponent,
     ClassComponent,
     ProjectComponent,
-    SubjectComponent
+    SubjectComponent,
+    ClassStudentComponent,
+    AssignmentComponent,
+    CreateAndUpdateSubjectComponent
   ]
 })
 export class MainModule { }
