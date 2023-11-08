@@ -26,3 +26,24 @@ export class ListSubject{
   created_by:string | undefined
   updated_by:string | undefined
 }
+
+export class CreateAndUpdateSubject {
+  manager_id: number | undefined;
+  subject_code: string | undefined;
+  subject_name: string | undefined;
+  description: string | undefined;
+  start_date: string | undefined;
+  created_by: string | undefined;
+  created_date: Date | undefined;
+}
+
+export class UpdateSubject{
+  id : number | undefined
+  manager_id:number | undefined
+  subject_code: string | undefined
+  subject_name:string | undefined
+  description:string | undefined
+  start_date:string | undefined
+  created_by:string | undefined
+  created_date:Date | undefined
+}

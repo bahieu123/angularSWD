@@ -1,4 +1,5 @@
-<form>
+<form [formGroup]="formGroup">
+
   <div class="create-body1" *ngIf="subjectId;else create">
     <div class="create-body">
       <div class="container-fluid">
@@ -10,7 +11,7 @@
           </div>
           <div class="col-md-1">
             <div class="btn-back ">
-              <a class="backDetail" ><i class="fa fa-arrow-left"></i> Update</a>
+              <a class="backDetail" (click)="saveSubject()"><i class="fa fa-arrow-left"></i> Update</a>
             </div>
           </div>
           <div class="col-md-3">
@@ -28,11 +29,29 @@
           <div class="row">
             <div class="col-md-6">
               <label class="col-form-label ">Name User <span class="text-required">*</span></label><br>
-              <input type="text" pInputText formControlName="text" [style.width.%]="90"/>
+              <input type="text"
+                     pInputText formControlName="text"
+                     [style.width.%]="90"
+                     name="userName"
+                     [(ngModel)]="subjectDetail.manager_id"
+                     formControlName="manager_id"
+                     />
+                     <div *ngIf="formGroup.get('manager_id')!.hasError('required') && formGroup.get('manager_id')!.touched">
+                      <span class="error-message-span mes-err">Không được để trống</span>
+                    </div>
             </div>
             <div class="col-md-6">
               <label class="col-form-label ">Subject Name <span class="text-required">*</span></label><br>
-              <input type="text" pInputText formControlName="text" [style.width.%]="90"/>
+              <input type="text"
+                     pInputText formControlName="text"
+                     [style.width.%]="90"
+                     name="subjectName"
+                     [(ngModel)]="subjectDetail.subject_name"
+                     formControlName="subject_name"
+                     />
+                     <div *ngIf="formGroup.get('subject_name')!.hasError('required') && formGroup.get('subject_name')!.touched">
+                      <span class="error-message-span mes-err">Không được để trống</span>
+                    </div>
             </div>
           </div>
         </div>
@@ -40,21 +59,49 @@
           <div class="row">
             <div class="col-md-3">
               <label class="col-form-label ">Start Date <span class="text-required">*</span></label><br>
-              <input type="date" [style.width.%]="80">
+              <input type="text"
+                     pInputText formControlName="text"
+                     [style.width.%]="80"
+                     name="startDate"
+                     [(ngModel)]="subjectDetail.start_date"
+                     formControlName="start_date"
+                     />
+                     <div *ngIf="formGroup.get('start_date')!.hasError('required') && formGroup.get('start_date')!.touched">
+                      <span class="error-message-span mes-err">Không được để trống</span>
+                    </div>
             </div>
             <div class="col-md-3">
               <label class="col-form-label ">Subject Code <span class="text-required">*</span></label><br>
-              <input type="text" pInputText formControlName="text" [style.width.%]="80"/>
+              <input type="text"
+                     pInputText formControlName="text"
+                     [style.width.%]="80"
+                     name="subjectCode"
+                     [(ngModel)]="subjectDetail.subject_code"
+                     formControlName="subject_code"
+                     />
+                     <div *ngIf="formGroup.get('subject_code')!.hasError('required') && formGroup.get('subject_code')!.touched">
+                      <span class="error-message-span mes-err">Không được để trống</span>
+                    </div>
             </div>
             <div class="col-md-6">
               <label class="col-form-label ">Description <span class="text-required">*</span></label><br>
-              <textarea rows="5" cols="30" pInputTextarea [style.width.%]="90"></textarea>
+              <textarea rows="5" cols="30"
+                        pInputTextarea
+                        [style.width.%]="90"
+                        name="description"
+                        [(ngModel)]="subjectDetail.description"
+                        formControlName="description"
+                        ></textarea>
+                        <div *ngIf="formGroup.get('description')!.hasError('required') && formGroup.get('description')!.touched">
+                          <span class="error-message-span mes-err">Không được để trống</span>
+                        </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <ng-template #create>
     <div class="create-body1" >
       <div class="create-body">
@@ -67,7 +114,7 @@
             </div>
             <div class="col-md-1">
               <div class="btn-back ">
-                <a class="backDetail" ><i class="fa fa-arrow-left"></i> Create</a>
+                <a class="backDetail" (click)="saveSubject()"><i class="fa fa-arrow-left"></i> Create</a>
               </div>
             </div>
             <div class="col-md-3">
@@ -85,11 +132,29 @@
             <div class="row">
               <div class="col-md-6">
                 <label class="col-form-label ">Name User <span class="text-required">*</span></label><br>
-                <input type="text" pInputText formControlName="text" [style.width.%]="90"/>
+                <input type="number"
+                       pInputText formControlName="text"
+                       [style.width.%]="90"
+                       [(ngModel)]="inputCreate.manager_id"
+                       name="nameUser"
+                       formControlName="manager_id"
+                       />
+                       <div *ngIf="formGroup.get('manager_id')!.hasError('required') && formGroup.get('manager_id')!.touched">
+                        <span class="error-message-span mes-err">Không được để trống</span>
+                      </div>
               </div>
               <div class="col-md-6">
                 <label class="col-form-label ">Subject Name <span class="text-required">*</span></label><br>
-                <input type="text" pInputText formControlName="text" [style.width.%]="90"/>
+                <input type="text"
+                        pInputText formControlName="text"
+                        [style.width.%]="90"
+                        [(ngModel)]="inputCreate.subject_name"
+                        name="subjectName"
+                        formControlName="subject_name"
+                        />
+                        <div *ngIf="formGroup.get('subject_name')!.hasError('required') && formGroup.get('subject_name')!.touched">
+                          <span class="error-message-span mes-err">Không được để trống</span>
+                        </div>
               </div>
             </div>
           </div>
@@ -97,15 +162,41 @@
             <div class="row">
               <div class="col-md-3">
                 <label class="col-form-label ">Start Date <span class="text-required">*</span></label><br>
-                <input type="date" [style.width.%]="80">
+                <input type="text"
+                      pInputText formControlName="text"
+                      [style.width.%]="80"
+                      [(ngModel)]="inputCreate.subject_name"
+                      name="startDate"
+                      formControlName="start_date"
+                      />
+                      <div *ngIf="formGroup.get('start_date')!.hasError('required') && formGroup.get('start_date')!.touched">
+                        <span class="error-message-span mes-err">Không được để trống</span>
+                      </div>
               </div>
               <div class="col-md-3">
                 <label class="col-form-label ">Subject Code <span class="text-required">*</span></label><br>
-                <input type="text" pInputText formControlName="text" [style.width.%]="80"/>
+                <input type="text"
+                       pInputText formControlName="text"
+                       [style.width.%]="80"
+                       [(ngModel)]="inputCreate.subject_code"
+                       name="subjectCode"
+                       formControlName="subject_code"
+                       />
+                       <div *ngIf="formGroup.get('subject_code')!.hasError('required') && formGroup.get('subject_code')!.touched">
+                        <span class="error-message-span mes-err">Không được để trống</span>
+                      </div>
               </div>
               <div class="col-md-6">
                 <label class="col-form-label ">Description <span class="text-required">*</span></label><br>
-                <textarea rows="5" cols="30" pInputTextarea [style.width.%]="90"></textarea>
+                <textarea rows="5" cols="30"
+                          pInputTextarea [style.width.%]="90"
+                          [(ngModel)]="inputCreate.description"
+                          name="discription"
+                          formControlName="description"
+                          ></textarea>
+                          <div *ngIf="formGroup.get('description')!.hasError('required') && formGroup.get('description')!.touched">
+                            <span class="error-message-span mes-err">Không được để trống</span>
+                          </div>
               </div>
             </div>
           </div>
@@ -113,4 +204,5 @@
       </div>
     </div>
   </ng-template>
+
 </form>

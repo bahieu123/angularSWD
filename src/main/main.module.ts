@@ -14,6 +14,7 @@ import { ProjectComponent } from './project/project.component';
 import { SubjectComponent } from './subject/subject.component';
 import { ClassStudentComponent } from './classStudent/classStudent.component';
 import { AssignmentComponent } from './assignment/assignment.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //layout
 
 // primng
@@ -21,10 +22,13 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
 import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubject/CreateAndUpdateSubject.component';
+import { CreateAndUpdateComponent } from './assignment/CreateAndUpdate/CreateAndUpdate.component';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule,
+    ReactiveFormsModule,
     MainRoutingModel,
     ModalModule.forChild(),
     //primng
@@ -45,7 +49,8 @@ import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubjec
     SubjectComponent,
     ClassStudentComponent,
     AssignmentComponent,
-    CreateAndUpdateSubjectComponent
+    CreateAndUpdateSubjectComponent,
+    CreateAndUpdateComponent
   ]
 })
 export class MainModule { }
