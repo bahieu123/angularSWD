@@ -3,6 +3,6 @@ export class User {
     name: string |undefined;
     username: string | undefined;
     email: string | undefined;
-    roleId: string | undefined;
+    role: number | undefined;
     status: number | undefined;
 }

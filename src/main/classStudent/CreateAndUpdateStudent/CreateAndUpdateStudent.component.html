@@ -1,0 +1,112 @@
+<form [formGroup]="formGroup">
+
+  <div class="create-body1" *ngIf="studentId;else create">
+    <div class="create-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Update Student</h2>
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-1">
+            <p-button label="Update" icon="bi bi-pencil-square" styleClass="p-button-success mr-2"
+              (click)="saveStudent()"></p-button>
+          </div>
+          <div class="col-md-3">
+            <p-button label="Back" icon="bi bi-arrow-left-circle" styleClass="p-button-outlined mr-2"
+              (click)="back()"></p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="create-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <label class="col-form-label ">Class <span class="text-required">*</span></label><br>
+            <select [(ngModel)]="inputUpdate.class_id" formControlName="class_id" style="width: 90%;height: 30px;">
+              <option disabled selected>Pick a class</option>
+              <option *ngFor="let item of ListClass" [value]="item.id">{{ item.name }}</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="col-form-label ">Role User <span class="text-required">*</span></label><br>
+            <select [(ngModel)]="inputUpdate.student_id" formControlName="student_id" style="width: 90%;height: 30px;">
+              <option disabled selected>Pick a user</option>
+              <option *ngFor="let item of ListUser" [value]="item.id">
+                {{ item.name }}
+                <span *ngIf="item.role === 1"> - Admin</span>
+                <span *ngIf="item.role === 2"> - User</span>
+              </option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="col-form-label ">Status<span class="text-required">*</span></label><br>
+            <input [(ngModel)]="inputUpdate.status" name="status" ng-control="status" type="radio" [value]="1" required
+              type="radio" pInputText formControlName="status" /> Enable
+            <input [(ngModel)]="inputUpdate.status" name="status" ng-control="status" type="radio" [value]="0" required
+              type="radio" pInputText formControlName="status" /> Disable
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #create>
+    <div class="create-body1">
+      <div class="create-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Create Student </h2>
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-1">
+              <p-button label="Create" icon="bi bi-plus-square" styleClass="p-button-success mr-2"
+                (click)="saveStudent()"></p-button>
+            </div>
+            <div class="col-md-3">
+              <p-button label="Back" icon="bi bi-arrow-left-circle" styleClass="p-button-outlined mr-2"
+                (click)="back()"></p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="create-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="col-form-label ">Class <span class="text-required">*</span></label><br>
+              <select [(ngModel)]="inputCreate.class_id" formControlName="class_id" style="width: 90%;height: 30px;">
+                <option disabled selected>Pick a class</option>
+                <option *ngFor="let item of ListClass" [value]="item.id">{{ item.name }}</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="col-form-label ">Role User <span class="text-required">*</span></label><br>
+              <select [(ngModel)]="inputCreate.student_id" formControlName="student_id"
+                style="width: 90%;height: 30px;">
+                <option disabled selected>Pick a user</option>
+                <option *ngFor="let item of ListUser" [value]="item.id">
+                  {{ item.name }}
+                  <span *ngIf="item.role === 1"> - Admin</span>
+                  <span *ngIf="item.role === 2"> - User</span>
+                </option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="col-form-label ">Status<span class="text-required">*</span></label><br>
+              <input [(ngModel)]="inputCreate.status" name="status" ng-control="status" type="radio" [value]="1"
+                required type="radio" pInputText formControlName="status" /> Enable
+              <input [(ngModel)]="inputCreate.status" name="status" ng-control="status" type="radio" [value]="0"
+                required type="radio" pInputText formControlName="status" /> Disable
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</form>

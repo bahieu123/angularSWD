@@ -11,6 +11,8 @@ import { AssignmentComponent } from './assignment/assignment.component';
 import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubject/CreateAndUpdateSubject.component';
 import { CreateAndUpdateUserComponent } from './user/CreateAndUpdateUser/CreateAndUpdateUser.component';
 import { CreateAndUpdateComponent } from './assignment/CreateAndUpdate/CreateAndUpdate.component';
+import { CreateAndUpdateStudentComponent } from './classStudent/CreateAndUpdateStudent/CreateAndUpdateStudent.component';
+import { CreateAndUpdateClassComponent } from './class/CreateAndUpdateClass/CreateAndUpdateClass.component';
 
 
 @NgModule({
@@ -21,12 +23,14 @@ import { CreateAndUpdateComponent } from './assignment/CreateAndUpdate/CreateAnd
                   {path:'dashboard',component: DashboardComponent},
                   {path:'user',component: UserComponent},
                   {path:'class',component: ClassComponent},
+                  {path:'class/createUpdate',component: CreateAndUpdateClassComponent},
                   {path:'project',component: ProjectComponent},
                   {path:'subject',component: SubjectComponent},
                   {path:'subject/DetailSubject',component: CreateAndUpdateSubjectComponent},
                   {path:'assignment',component: AssignmentComponent},
                   {path:'assignment/createUpdate',component: CreateAndUpdateComponent},
                   {path:'student',component: ClassStudentComponent},
+                  {path:'student/createUpdate',component: CreateAndUpdateStudentComponent},
                   {path:'user/DetailUser',component: CreateAndUpdateUserComponent},
                 ]
           }
