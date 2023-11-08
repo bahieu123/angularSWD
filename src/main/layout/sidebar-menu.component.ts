@@ -24,6 +24,7 @@ export class SidebarMenuComponent implements OnInit {
         new ItemMenu('Assignment','/main/assignment','bi bi-book'),
         new ItemMenu('Project','/main/project','bi bi-columns'),
         new ItemMenu('Subject','/main/subject','bi bi-amd'),
+        new ItemMenu('Milestone','/main/milestone','bi bi-box-seam-fill'),
         new ItemMenu('Setting','','bi bi-gear-fill'),
 
 

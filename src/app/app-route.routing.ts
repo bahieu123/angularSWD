@@ -7,7 +7,7 @@ import { MainComponent } from 'src/main/main.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/account', pathMatch: 'full' },
+  { path: '', redirectTo: '/account/login', pathMatch: 'full' },
   {path: 'account',component:AccountComponent},
   {path: 'main',component:MainComponent}
 ];
