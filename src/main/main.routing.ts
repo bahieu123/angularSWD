@@ -9,6 +9,10 @@ import { SubjectComponent } from './subject/subject.component';
 import { ClassStudentComponent } from './classStudent/classStudent.component';
 import { AssignmentComponent } from './assignment/assignment.component';
 import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubject/CreateAndUpdateSubject.component';
+import { MilestoneComponent } from './milestone/milestone.component';
+import { CreateAndUpdateMilestoneComponent } from './milestone/CreateAndUpdateMilestone/CreateAndUpdateMilestone.component';
+import { CreateAndUpdateComponent } from './assignment/CreateAndUpdate/CreateAndUpdate.component';
+import { CreateAndUpdateUserComponent } from './user/CreateAndUpdateUser/CreateAndUpdateUser.component';
 
 @NgModule({
   imports: [
@@ -24,7 +28,9 @@ import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubjec
                   {path:'assignment',component: AssignmentComponent},
                   {path:'assignment/createUpdate',component: CreateAndUpdateComponent},
                   {path:'student',component: ClassStudentComponent},
-
+                  {path:'milestone',component: MilestoneComponent},
+                  {path:'milestone/detail',component: CreateAndUpdateMilestoneComponent},
+                  {path:'user/detail',component: CreateAndUpdateUserComponent},
                 ]
           }
       ])

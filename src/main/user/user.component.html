@@ -87,7 +87,7 @@
               {{ rowIndex + 1 }}
             </td>
             <td>
-              {{ user.username }}
+              <a (click)="DetailUser(user)">{{ user.username }}</a>
             </td>
             <td>
               {{ user.name }}
@@ -113,7 +113,7 @@
                 {{rowIndex + 1}}
               </td>
               <td>
-                 <a (click)="DetailUser(user)" style="color: cadetblue;">{{user.id}}</a>
+                 <a (click)="DetailUser(user)" style="color: cadetblue;">{{user.username}}</a>
               </td>
               <td>
                 {{ user.name }}

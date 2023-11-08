@@ -1,0 +1,183 @@
+<form #milestoneForm="ngForm">
+
+  <div class="create-body1" *ngIf="milestoneId;else create">
+    <div class="create-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Update Milestone</h2>
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-1">
+            <div class="btn-back ">
+              <a class="backDetail" (click)="saveMilestone(milestoneForm)"><i class="fa fa-arrow-left"></i> Update</a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="btn-back btn-back1">
+              <a class="backDetail" (click)="back()"><i class="fa fa-arrow-left"></i> Quay lại</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="create-body">
+      <div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="col-form-label ">Name Milestone <span class="text-required">*</span></label><br>
+              <input type="text"
+                     pInputText
+                     [style.width.%]="90"
+                     name="MilestoneName"
+                     [(ngModel)]="detailMilestone.name"
+                     #username="ngModel"
+                     required
+                     [ngClass]="(username.invalid && (username.dirty || username.touched)) ? 'ng-invalid ng-dirty' : '' "
+                     >
+                     <div *ngIf="username.touched && !username.valid">
+                      <span class="error-message-span mes-err" *ngIf="username.errors && username.errors['required']">{{'Không được để trống'}}</span>
+                      </div>
+
+            </div>
+            <div class="col-md-3">
+              <label class="col-form-label ">Project <span class="text-required">*</span></label><br>
+              <p-dropdown [(ngModel)]="detailMilestone.projectId"
+                         name="projectnam"
+                         [options]="ListProject"
+                         optionLabel="name"
+                         optionValue="id"
+                         [showClear]="true"
+                         placeholder="Select a project"
+
+                         ></p-dropdown>
+
+            </div>
+            <div class="col-md-3">
+              <label class="col-form-label ">Class <span class="text-required">*</span></label><br>
+              <p-dropdown [(ngModel)]="detailMilestone.classId"
+                          name="classname"
+                          [options]="listClass"
+                          optionLabel="name"
+                          optionValue="id"
+                          [showClear]="true"
+                          placeholder="Select a class"
+                          ></p-dropdown>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="col-form-label ">Description <span class="text-required">*</span></label><br>
+              <textarea rows="5" cols="30"
+                        pInputTextarea
+                        [style.width.%]="90"
+                        name="description"
+                        [(ngModel)]="detailMilestone.description"
+                        ></textarea>
+
+            </div>
+            <div class="col-md-6">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #create>
+    <div class="create-body1" >
+      <div class="create-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Create Subject</h2>
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-1">
+              <div class="btn-back ">
+                <a class="backDetail" (click)="saveMilestone(milestoneForm)"><i class="fa fa-arrow-left"></i> Create</a>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="btn-back btn-back1">
+                <a class="backDetail" (click)="back()"><i class="fa fa-arrow-left"></i> Quay lại</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="create-body">
+        <div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <label class="col-form-label ">Name Milestone <span class="text-required">*</span></label><br>
+                <input type="text"
+                       pInputText formControlName="text"
+                       [style.width.%]="90"
+                       name="userName"
+                       [(ngModel)]="createMilestone.name"
+                       />
+
+              </div>
+              <div class="col-md-3">
+                <label class="col-form-label ">Project <span class="text-required">*</span></label><br>
+                <p-dropdown [(ngModel)]="createMilestone.projectId"
+                           name="projectnam"
+                           [options]="ListProject"
+                           optionLabel="name"
+                           optionValue="id"
+                           [showClear]="true"
+                           placeholder="Select a project"
+                           ></p-dropdown>
+
+              </div>
+              <div class="col-md-3">
+                <label class="col-form-label ">Class <span class="text-required">*</span></label><br>
+                <p-dropdown [(ngModel)]="createMilestone.classId"
+                            name="classname"
+                            [options]="listClass"
+                            optionLabel="name"
+                            optionValue="id"
+                            [showClear]="true"
+                            placeholder="Select a class"
+                            ></p-dropdown>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <label class="col-form-label ">Description <span class="text-required">*</span></label><br>
+                <textarea rows="5" cols="30"
+                          pInputTextarea
+                          [style.width.%]="90"
+                          name="description"
+                          [(ngModel)]="createMilestone.description"
+                          ></textarea>
+
+              </div>
+              <div class="col-md-6">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ng-template>
+
+</form>

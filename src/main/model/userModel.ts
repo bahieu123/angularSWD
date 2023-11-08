@@ -1,8 +1,8 @@
 export class User {
-    id: number |undefined;
-    name: string |undefined;
+    id : number |undefined;
     username: string | undefined;
+    name: string | undefined;
     email: string | undefined;
-    roleId: string | undefined;
-    status: number | undefined;
+    role : number |undefined;
+    status : number |undefined;
 }
