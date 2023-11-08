@@ -21,3 +21,25 @@ export class ListProject{
     updated_by:string | undefined
     status: boolean | undefined
   }
+
+  export class AddProject{
+    name: string | undefined
+    class_id:number | undefined
+    team_leader_id:number | undefined
+    english_name: string | undefined
+    vietnamese_name: string | undefined
+    status: number | undefined
+    created_by:string | undefined
+
+  }
+
+  export class UpdateProject{
+    id: number|undefined
+    name: string | undefined
+    class_id:number | undefined
+    team_leader_id:number | undefined
+    english_name: string | undefined
+    vietnamese_name: string | undefined
+    status: number | undefined
+    updated_by:string | undefined
+  }

@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
-  AddNewAssignment,
-  GetAssignment,
-  UpdateAssignment,
-} from 'src/main/model/assignmentModel';
-import { ListSubject } from 'src/main/model/models';
-import { AssignmentServiceService } from 'src/service/AssignmentService.service';
-import { SubjectServiceService } from 'src/service/subjectService.service';
+  AddProject, UpdateProject
+} from 'src/main/model/projectModel';
+import { GetClass } from 'src/main/model/classModel';
+import { ProjectServiceService } from 'src/service/ProjectSerice.service';
+import { ClassServiceService } from 'src/service/ClassService.service';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
@@ -16,18 +14,18 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
   styleUrls: ['./CreateAndUpdate.component.css'],
 })
 export class CreateAndUpdateComponent implements OnInit {
-  assignmentId: number | undefined;
-  listSubject: ListSubject[] = [];
+  projectId: number | undefined;
+  listClass: GetClass[] = [];
   formGroup: FormGroup;
-  inputCreate: AddNewAssignment = new AddNewAssignment();
-  inputUpdate: UpdateAssignment = new UpdateAssignment();
+  inputCreate: AddProject = new AddProject();
+  inputUpdate: UpdateProject = new UpdateProject();
 
   constructor(
     private formBuilder: FormBuilder,
     private _router: Router,
     private _route: ActivatedRoute,
-    private _subjectServiceService: SubjectServiceService,
-    private _assignmentService: AssignmentServiceService
+    private _ProjectServiceService: ProjectServiceService,
+    private _classService: ClassServiceService
   ) {
     this.formGroup = this.formBuilder.group({
       name: [null, Validators.required],
@@ -41,48 +39,48 @@ export class CreateAndUpdateComponent implements OnInit {
   ngOnInit() {
     this._route.params.subscribe((params) => {
       if (params['id']) {
-        this.assignmentId = Number(params['id']);
+        this.projectId = Number(params['id']);
       }
     });
-    this.GetAllSubject();
-    this.GetAssignment();
+    this.GetAllClass();
+    this.GetProject();
   }
 
-  GetAllSubject(): void {
-    this._subjectServiceService.getAllSubject().subscribe((result) => {
-      this.listSubject = result;
-      console.log(this.listSubject);
+  GetAllClass(): void {
+    this._classService.getAllClass().subscribe((result) => {
+      this.listClass = result;
+      console.log(this.listClass);
     });
   }
 
-  GetAssignment(): void {
-    this._assignmentService.detailAssignment(this.assignmentId).subscribe((result) => {
+  GetProject(): void {
+    this._ProjectServiceService.detailProject(this.projectId).subscribe((result) => {
       this.inputUpdate = result;
-      console.log(this.listSubject);
+      console.log(this.listClass);
     });
   }
 
 
-  saveAssignment(): void {
+  saveProject(): void {
     debugger
-    if (this.assignmentId) {
-      this.inputUpdate.id = this.assignmentId;
-      this._assignmentService
-        .updateAssignment(this.inputUpdate)
+    if (this.projectId) {
+      this.inputUpdate.id = this.projectId;
+      this._ProjectServiceService
+        .updateProject(this.inputUpdate)
         .subscribe(() => {
-          this._router.navigate(['/main/assignment']);
+          this._router.navigate(['/main/project']);
         });
     } else {
-      this._assignmentService
-        .createAssignment(this.inputCreate)
+      this._ProjectServiceService
+        .createProject(this.inputCreate)
         .subscribe(() => {
-          this._router.navigate(['/main/assignment']);
+          this._router.navigate(['/main/project']);
         });
     }
   }
 
 
   back(): void {
-    this._router.navigate(['main/assignment']);
+    this._router.navigate(['main/projects']);
   }
 }
