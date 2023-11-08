@@ -18,3 +18,9 @@ export class TokenData {
   }
 }
 
+export class ResetPassword {
+  username: string | undefined;
+  newpassword: string | undefined;
+  oldpassword: string | undefined;
+}
+
