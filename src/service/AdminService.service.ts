@@ -1,7 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { map } from 'rxjs/operators';
+
+import { Singup } from 'src/main/model/models';
 
 @Injectable({
   providedIn: 'root'
@@ -47,7 +50,9 @@ forgotPassword(email: string) {
     }));
 }
 
-
+Singin(body: Singup): Observable<any> {
+  return this.http.post<any>(`http://localhost:8080/auth/signup`,body);
+}
 
 
 }
