@@ -22,6 +22,7 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
 import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubject/CreateAndUpdateSubject.component';
+import { CreateAndUpdateComponent } from './assignment/CreateAndUpdate/CreateAndUpdate.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -48,7 +49,9 @@ import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubjec
     SubjectComponent,
     ClassStudentComponent,
     AssignmentComponent,
-    CreateAndUpdateSubjectComponent
+    CreateAndUpdateSubjectComponent,
+    AssignmentComponent,
+    CreateAndUpdateComponent
   ]
 })
 export class MainModule { }

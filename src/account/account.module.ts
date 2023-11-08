@@ -9,6 +9,9 @@ import { RegisterComponent } from './register/register.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { RouterModule } from '@angular/router';
 import { AccountRoutingModel } from './account-routing.routing';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+
+
 
 @NgModule({
   imports: [
@@ -17,14 +20,15 @@ import { AccountRoutingModel } from './account-routing.routing';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    //AppRoutingModule,
+    // AppRoutingModule,
     ModalModule.forChild(),
     AccountRoutingModel
   ],
   declarations: [
     AccountComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ChangePasswordComponent,
   ]
 })
 export class AccountModule { }

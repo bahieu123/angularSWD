@@ -54,5 +54,35 @@ Singin(body: Singup): Observable<any> {
   return this.http.post<any>(`http://localhost:8080/auth/signup`,body);
 }
 
+ChangePassword(obj: any): Observable<any> {
+  const requestOptions: RequestInit = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(obj),
+  };
+
+  return new Observable((observer) => {
+    fetch('http://localhost:8080/api/users/changePass', requestOptions)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        observer.next(data);
+        observer.complete();
+      })
+      .catch((error) => {
+        observer.error(error);
+        observer.complete();
+      });
+  });
+
+  
+}
+
 
 }

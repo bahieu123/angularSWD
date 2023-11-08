@@ -40,6 +40,17 @@
               <div *ngIf="name1.touched && !name1.valid" class="valifrom">
               <span class="error-message-span mes-err" *ngIf="name1.errors && name1.errors['required']">{{'Không được để trống'}}</span>
               </div>
+        <input type="Phone Number"
+               name="phone"
+               placeholder="Phone Number"
+               required
+               [(ngModel)]="inputSingin.phone"
+               #phone="ngModel"
+               [ngClass]="(phone.invalid && (phone.dirty || phone.touched)) ? 'ng-invalid ng-dirty' : '' "
+                />
+              <div *ngIf="phone.touched && !phone.valid" class="valifrom">
+              <span class="error-message-span mes-err" *ngIf="phone.errors && phone.errors['required']">{{'Không được để trống'}}</span>
+              </div>
         <input type="email"
                name="email"
                placeholder="Email"

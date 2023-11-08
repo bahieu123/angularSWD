@@ -22,9 +22,8 @@ import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubjec
                   {path:'subject',component: SubjectComponent},
                   {path:'subject/DetailSubject',component: CreateAndUpdateSubjectComponent},
                   {path:'assignment',component: AssignmentComponent},
-                  {path:'assignment/createUpdate',component: CreateAndUpdateComponent},
+                  // {path:'assignment/createUpdate',component: CreateAndUpdateComponent},
                   {path:'student',component: ClassStudentComponent},
-
                 ]
           }
       ])

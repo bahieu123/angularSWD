@@ -53,6 +53,7 @@ export class Singup{
   password:string | undefined
   name:string | undefined
   email:string | undefined
+  phone:string | undefined
 }
 
 export class profileToken{
