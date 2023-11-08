@@ -1,6 +1,6 @@
+import { Component, OnInit } from '@angular/core';
 import { GetAssignment, UpdateAssignment } from 'src/main/model/assignmentModel';
 import { AssignmentServiceService } from './../../service/AssignmentService.service';
-import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
