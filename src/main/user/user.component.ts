@@ -32,11 +32,11 @@ export class UserComponent implements OnInit {
 
 
   CreateUser(): void{
-    this._router.navigate(['/main/user/DetailUser']);
+    this._router.navigate(['/main/user/detail']);
   }
 
   DetailUser(data: User):void{
-     this._router.navigate(['/main/user/DetailUser',
+     this._router.navigate(['/main/user/detail',
      {
       username:data.username
      }

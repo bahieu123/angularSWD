@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   AddNewAssignment,
-  GetAssignment,
   UpdateAssignment,
 } from 'src/main/model/assignmentModel';
 import { ListSubject } from 'src/main/model/models';
 import { AssignmentServiceService } from 'src/service/AssignmentService.service';
 import { SubjectServiceService } from 'src/service/subjectService.service';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({

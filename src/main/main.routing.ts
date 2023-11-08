@@ -9,10 +9,17 @@ import { SubjectComponent } from './subject/subject.component';
 import { ClassStudentComponent } from './classStudent/classStudent.component';
 import { AssignmentComponent } from './assignment/assignment.component';
 import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubject/CreateAndUpdateSubject.component';
+
 import { CreateAndUpdateUserComponent } from './user/CreateAndUpdateUser/CreateAndUpdateUser.component';
 import { CreateAndUpdateComponent } from './assignment/CreateAndUpdate/CreateAndUpdate.component';
 import { CreateAndUpdateStudentComponent } from './classStudent/CreateAndUpdateStudent/CreateAndUpdateStudent.component';
 import { CreateAndUpdateClassComponent } from './class/CreateAndUpdateClass/CreateAndUpdateClass.component';
+
+
+import { MilestoneComponent } from './milestone/milestone.component';
+import { CreateAndUpdateMilestoneComponent } from './milestone/CreateAndUpdateMilestone/CreateAndUpdateMilestone.component';
+//import { CreateAndUpdateComponent } from './assignment/CreateAndUpdate/CreateAndUpdate.component';
+//import { CreateAndUpdateUserComponent } from './user/CreateAndUpdateUser/CreateAndUpdateUser.component';
 
 
 @NgModule({
@@ -30,10 +37,11 @@ import { CreateAndUpdateClassComponent } from './class/CreateAndUpdateClass/Crea
                   {path:'assignment',component: AssignmentComponent},
                   // {path:'assignment/createUpdate',component: CreateAndUpdateComponent},
                   {path:'student',component: ClassStudentComponent},
-
                   {path:'student/createUpdate',component: CreateAndUpdateStudentComponent},
                   {path:'user/DetailUser',component: CreateAndUpdateUserComponent},
-
+                  {path:'milestone',component: MilestoneComponent},
+                  {path:'milestone/detail',component: CreateAndUpdateMilestoneComponent},
+                  {path:'user/detail',component: CreateAndUpdateUserComponent},
                 ]
           }
       ])

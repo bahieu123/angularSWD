@@ -18,14 +18,27 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //layout
 
 // primng
+import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
+import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
+import { InputTextModule } from 'primeng/inputtext';
 import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubject/CreateAndUpdateSubject.component';
+
 import { CreateAndUpdateComponent } from './assignment/CreateAndUpdate/CreateAndUpdate.component';
 
 import { CreateAndUpdateStudentComponent } from './classStudent/CreateAndUpdateStudent/CreateAndUpdateStudent.component';
 import { CreateAndUpdateClassComponent } from './class/CreateAndUpdateClass/CreateAndUpdateClass.component';
+
+
+import { MilestoneComponent } from './milestone/milestone.component';
+import { CreateAndUpdateMilestoneComponent } from './milestone/CreateAndUpdateMilestone/CreateAndUpdateMilestone.component';
+//import { CreateAndUpdateComponent } from './assignment/CreateAndUpdate/CreateAndUpdate.component';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CheckboxModule } from 'primeng/checkbox';
+import { CreateAndUpdateUserComponent } from './user/CreateAndUpdateUser/CreateAndUpdateUser.component';
 
 @NgModule({
   imports: [
@@ -38,7 +51,13 @@ import { CreateAndUpdateClassComponent } from './class/CreateAndUpdateClass/Crea
     //primng
     TableModule,
     ButtonModule,
-    ToolbarModule
+    ToolbarModule,
+    TriStateCheckboxModule,
+    DropdownModule,
+    InputTextModule,
+    InputTextareaModule,
+    BrowserAnimationsModule,
+    CheckboxModule
 
   ],
   declarations: [
@@ -54,10 +73,17 @@ import { CreateAndUpdateClassComponent } from './class/CreateAndUpdateClass/Crea
     ClassStudentComponent,
     AssignmentComponent,
     CreateAndUpdateSubjectComponent,
+
     AssignmentComponent,
     CreateAndUpdateComponent,
     CreateAndUpdateStudentComponent,
     CreateAndUpdateClassComponent,
+
+    MilestoneComponent,
+    CreateAndUpdateMilestoneComponent,
+    CreateAndUpdateComponent,
+    CreateAndUpdateUserComponent
+
   ]
 })
 export class MainModule { }

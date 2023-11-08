@@ -55,25 +55,50 @@ export class Singup{
   email:string | undefined
   phone:string | undefined
 }
-
-export class profileToken{
-    userId: number | undefined;
-    roles: number | undefined;
-    username: string | undefined;
-    email: string | undefined;
+export class ListMilestone{
+    id:number | undefined
+    name:string | undefined
+    description:string | undefined
+    projectId:number | undefined
+    classId:number | undefined
+    status:number | undefined
+    createdBy:string | undefined
+    createdDate:Date | undefined
+    updatedBy:string | undefined
+    updatedDate:Date | undefined
+    projectName:string | undefined
+    className:string | undefined
 }
 
-export class ListMilestone{
+export class createMilestone{
+  name:string | undefined
+  description:string | undefined
+  projectId: number | undefined
+  classId: number | undefined
+  status: number | undefined
+}
+
+export class updateMilestone{
+  id: number | undefined
+  name:string | undefined
+  user_id: number | undefined
+  class_id: number | undefined
+  team_leader_id:number | undefined
+  english_name:string | undefined
+  vietnamese_name:string | undefined
+  status: number | undefined
+  updated_by:number | undefined
+  updated_date:Date | undefined
+}
+
+export class ListRole{
   id: number | undefined;
-  name:string | undefined;
-  description:string | undefined;
-  projectId:number | undefined;
-  classId:number | undefined;
-  status:number | undefined;
-  createdBy:string | undefined;
-  createdDate:Date | undefined;
-  updatedBy:string | undefined;
-  updatedDate:Date | undefined;
-  projectName:string | undefined;
-  className:string | undefined;
+  name: string | undefined
+}
+
+export class updateUser{
+  username: string | undefined
+  firstName: string | undefined
+  lastName: string | undefined
+  email: string | undefined
 }
