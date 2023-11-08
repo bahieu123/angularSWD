@@ -42,6 +42,14 @@ export class ClassStudentComponent implements OnInit {
     })
   }
 
+  getInputValue(event: Event): string {
+    if (event.target instanceof HTMLInputElement) {
+      return event.target.value;
+    }
+    return '';
+  }
+
+
   clear(): void {
     this.getAllClass();
   }
