@@ -6,16 +6,7 @@
           <h3>List Assignment</h3>
         </div>
         <ng-template pTemplate="end">
-          <p-button
-            label="Add Assignment"
-            icon="pi pi-plus"
-            icon="pi pi-trash"
-            styleClass="p-button-success mr-2"
-          ></p-button>
-          <p-button
-            styleClass="p-button-danger mr-2"
-            icon="pi pi-trash"
-          ></p-button>
+          <p-button label="Add Assignment" icon="bi bi-pencil-square" styleClass="p-button-success mr-2" (click)="createAssignment()"></p-button>
         </ng-template>
       </p-toolbar>
     </div>
@@ -74,6 +65,9 @@
             <th style="min-width: 15rem">
               <div class="flex align-items-center">Updated By</div>
             </th>
+            <th style="min-width: 15rem">
+              <div class="flex align-items-center">Action</div>
+            </th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-assignment let-rowIndex="rowIndex">
@@ -94,10 +88,14 @@
               {{ assignment.subjectName }}
             </td>
             <td>
-              {{ assignment.description }}
+              {{ assignment.created_by }}
             </td>
             <td>
               {{ assignment.updated_by }}
+            </td>
+            <td>
+              <p-button  icon="pi pi-trash" styleClass="p-button-danger mr-2" (click)="deleteAssignment(assignment.id)"></p-button>
+              <p-button  icon="bi bi-pencil-square" styleClass="p-button-outlined mr-2" (click)="updateAssignment(assignment)"></p-button>
             </td>
           </tr>
         </ng-template>
