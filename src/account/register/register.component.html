@@ -54,7 +54,7 @@
               <span class="error-message-span mes-err" *ngIf="emailModel.errors && emailModel.errors['pattern']">{{'Không đúng cú pháp email'}}</span>
               </div>
         <button (click)="singin(singinForm)">Sign up</button>
-        <button class="">Back</button>
+        <button class="" (click)="backLogin()">Back</button>
       </form>
     </div>
 </div>

@@ -54,3 +54,25 @@ export class Singup{
   name:string | undefined
   email:string | undefined
 }
+
+export class profileToken{
+    userId: number | undefined;
+    roles: number | undefined;
+    username: string | undefined;
+    email: string | undefined;
+}
+
+export class ListMilestone{
+  id: number | undefined;
+  name:string | undefined;
+  description:string | undefined;
+  projectId:number | undefined;
+  classId:number | undefined;
+  status:number | undefined;
+  createdBy:string | undefined;
+  createdDate:Date | undefined;
+  updatedBy:string | undefined;
+  updatedDate:Date | undefined;
+  projectName:string | undefined;
+  className:string | undefined;
+}

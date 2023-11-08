@@ -35,4 +35,8 @@ export class RegisterComponent implements OnInit {
     })
 
   }
+
+  backLogin(): void{
+    this._route.navigate(['/account/login']);
+  }
 }
