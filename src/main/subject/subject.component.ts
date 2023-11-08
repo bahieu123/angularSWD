@@ -42,7 +42,15 @@ export class SubjectComponent implements OnInit {
     ]);
   }
 
+  getInputValue(event: Event): string {
+    if (event.target instanceof HTMLInputElement) {
+      return event.target.value;
+    }
+    return '';
+  }
+
   deleteSubject(data: ListSubject): void{
+    debugger
     this._subjectServiceService.SubjectDelete(data.id).subscribe(() => {
       this.GetAllSubject();
     })

@@ -1,15 +1,20 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { CreateAndUpdateSubject, ListSubject, UpdateSubject } from 'src/main/model/models';
+import { AddProject, ListProject, UpdateProject } from 'src/main/model/projectModel';
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'Application/json' }),
+};
+const apiUrl = 'http://localhost:8080/api';
+
 @Injectable({
   providedIn: 'root'
 })
-export class SubjectServiceService {
+export class ProjectServiceService {
 
 constructor(private http: HttpClient) { }
 
-getAllSubject(): Observable<ListSubject[]> {
+getAllProject(): Observable<ListProject[]> {
   // Lấy token từ local storage hoặc bất kỳ nguồn nào bạn lưu trữ
   const token = localStorage.getItem('token');
   if (!token) {
@@ -19,13 +24,14 @@ getAllSubject(): Observable<ListSubject[]> {
   const headers = new HttpHeaders({
     'Authorization': `Bearer ${token}`
   });
-  return this.http.get<any>("http://localhost:8080/api/subjects/GetAll?pageNo=0&pageSize=100", { headers })
+  return this.http.get<any>("http://localhost:8080/api/projects/GetAll?pageNo=0&pageSize=100", { headers })
   .pipe(
     map(response => response.Data)
   );
 }
 
-CreateSubject(body: CreateAndUpdateSubject): Observable<any> {
+
+createProject(body: AddProject): Observable<any> {
   const token = localStorage.getItem('token');
   if (!token) {
     throw new Error('Token not found. Please authenticate first.');
@@ -34,36 +40,23 @@ CreateSubject(body: CreateAndUpdateSubject): Observable<any> {
   const headers = new HttpHeaders({
     'Authorization': `Bearer ${token}`
   });
-  return this.http.post<any>("http://localhost:8080/api/subjects/AddNew", body, { headers });
- }
-
- UpdateSubject(body: ListSubject): Observable<any> {
-  const token = localStorage.getItem('token');
-  if (!token) {
-    throw new Error('Token not found. Please authenticate first.');
-  }
-
-  const headers = new HttpHeaders({
-    'Authorization': `Bearer ${token}`
-  });
-  return this.http.put<any>("http://localhost:8080/api/subjects/Update", body, { headers });
- }
-
- SubjectDetail(id: number | undefined): Observable<any> {
-  const token = localStorage.getItem('token');
-  if (!token) {
-    throw new Error('Token not found. Please authenticate first.');
-  }
-  const headers = new HttpHeaders({
-    'Authorization': `Bearer ${token}`
-  });
-  return this.http.get<any>(`http://localhost:8080/api/subjects/GetSubject/${id}`, { headers })
-  .pipe(
-    map(response => response.Data)
-  );
+  return this.http.post<any>(apiUrl + `/projects/AddNew`, body, { headers });
 }
 
-SubjectDelete(id: number | undefined): Observable<any> {
+
+updateProject(body: UpdateProject): Observable<any> {
+  const token = localStorage.getItem('token');
+  if (!token) {
+    throw new Error('Token not found. Please authenticate first.');
+  }
+
+  const headers = new HttpHeaders({
+    'Authorization': `Bearer ${token}`
+  });
+  return this.http.put<any>(apiUrl + `/projects/Update`, body, { headers });
+}
+
+detailProject(id: number | undefined): Observable<any> {
   const token = localStorage.getItem('token');
   if (!token) {
     throw new Error('Token not found. Please authenticate first.');
@@ -71,8 +64,19 @@ SubjectDelete(id: number | undefined): Observable<any> {
   const headers = new HttpHeaders({
     'Authorization': `Bearer ${token}`
   });
-  return this.http.delete<any>(`http://localhost:8080/api/subjects/Delete/${id}`, { headers });
+  return this.http.get<any>(apiUrl + `/projects/Getproject/${id}`, { headers })
+  .pipe(map(response => response.Data));
 }
 
+// deleteProject(id: number | undefined): Observable<any> {
+//   const token = localStorage.getItem('token');
+//   if (!token) {
+//     throw new Error('Token not found. Please authenticate first.');
+//   }
+//   const headers = new HttpHeaders({
+//     'Authorization': `Bearer ${token}`
+//   });
+//   return this.http.delete<any>(apiUrl + `/assignments/Delete/${id}`, { headers })
+// }
 
 }

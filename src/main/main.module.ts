@@ -25,6 +25,7 @@ import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubjec
 import { CreateAndUpdateComponent } from './assignment/CreateAndUpdate/CreateAndUpdate.component';
 import { CreateAndUpdateStudentComponent } from './classStudent/CreateAndUpdateStudent/CreateAndUpdateStudent.component';
 import { CreateAndUpdateClassComponent } from './class/CreateAndUpdateClass/CreateAndUpdateClass.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -55,6 +56,7 @@ import { CreateAndUpdateClassComponent } from './class/CreateAndUpdateClass/Crea
     CreateAndUpdateComponent,
     CreateAndUpdateStudentComponent,
     CreateAndUpdateClassComponent
+
   ]
 })
 export class MainModule { }

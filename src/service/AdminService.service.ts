@@ -2,6 +2,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { map } from 'rxjs/operators';
+
+import { Singup } from 'src/main/model/models';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -35,8 +39,20 @@ Authenticate(obj: any): Observable<any> {
         observer.complete();
       });
   });
+
+  
 }
 
+forgotPassword(email: string) {
+  return this.http.post<any>(`${this.APIUrl}/recover`, { email: email })
+    .pipe(map(response => {
+        return response;
+    }));
+}
+
+Singin(body: Singup): Observable<any> {
+  return this.http.post<any>(`http://localhost:8080/auth/signup`,body);
+}
 
 
 }
