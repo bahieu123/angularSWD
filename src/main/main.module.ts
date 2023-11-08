@@ -23,6 +23,7 @@ import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
 import { CreateAndUpdateSubjectComponent } from './subject/CreateAndUpdateSubject/CreateAndUpdateSubject.component';
 import { CreateAndUpdateComponent } from './assignment/CreateAndUpdate/CreateAndUpdate.component';
+import { CreateAndUpdateProjectComponent } from './project/CreateAndUpdate/CreateAndUpdateProject.component';
 @NgModule({
   imports: [
     CommonModule,

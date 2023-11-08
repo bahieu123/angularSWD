@@ -10,10 +10,10 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-CreateAndUpdate',
-  templateUrl: './CreateAndUpdate.component.html',
-  styleUrls: ['./CreateAndUpdate.component.css'],
+  templateUrl: './CreateAndUpdateProject.component.html',
+  styleUrls: ['./CreateAndUpdateProject.component.css'],
 })
-export class CreateAndUpdateComponent implements OnInit {
+export class CreateAndUpdateProjectComponent implements OnInit {
   projectId: number | undefined;
   listClass: GetClass[] = [];
   formGroup: FormGroup;
