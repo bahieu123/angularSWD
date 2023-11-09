@@ -3,7 +3,7 @@
     <div class="body-2">
       <p-toolbar>
         <div class="p-toolbar-group-start">
-          <h3>List Assignment</h3>
+          <h3>List Assignment Manager</h3>
         </div>
         <ng-template pTemplate="end">
           <p-button label="Add Assignment" icon="bi bi-pencil-square" styleClass="p-button-success mr-2" (click)="createAssignment()"></p-button>
@@ -22,18 +22,16 @@
         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
         [globalFilterFields]="['name']"
       >
-        <ng-template pTemplate="caption">
-          <div class="flex">
-            <button
-              pButton
-              label="Clear"
-              class="p-button-outlined"
-              icon="pi pi-filter-slash"
-              (click)="clear()"
-            ></button>
-            <span class="p-input-icon-left ml-auto"> </span>
-          </div>
-        </ng-template>
+      <ng-template pTemplate="caption">
+        <div class="flex">
+            <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear()"></button>
+            <span class="p-input-icon-left ml-auto">
+              <div class="filter">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="dt1.filterGlobal(getInputValue($event), 'contains')" placeholder="Search keyword" /></div>
+            </span>
+        </div>
+    </ng-template>
 
         <ng-template pTemplate="header">
           <tr>
@@ -85,10 +83,10 @@
               {{ assignment.subjectName }}
             </td>
             <td>
-              {{ assignment.subjectName }}
+              {{ assignment.description }}
             </td>
             <td>
-              {{ assignment.description }}
+              {{ assignment.created_by }}
             </td>
             <td>
               {{ assignment.updated_by }}

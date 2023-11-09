@@ -70,14 +70,15 @@
       </li>
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-          <img src="" alt="profile"/>
+          <span style="font-weight: 700;">{{profileToken.email}}</span><img src="" alt="profile"/>
+
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
           <a class="dropdown-item">
             <i class="bi bi-gear"></i>
             Settings
           </a>
-          <a class="dropdown-item">
+          <a class="dropdown-item" (click)="logout()">
             <i class="bi bi-box-arrow-in-left"></i>
             Logout
           </a>

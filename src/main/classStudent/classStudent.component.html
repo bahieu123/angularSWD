@@ -3,19 +3,10 @@
     <div class="body-2">
       <p-toolbar>
         <div class="p-toolbar-group-start">
-          <h3>List Student</h3>
+          <h3>List Student Manager</h3>
         </div>
         <ng-template pTemplate="end">
-          <p-button
-            label="Add Student"
-            icon="pi pi-plus"
-            icon="pi pi-trash"
-            styleClass="p-button-success mr-2"
-          ></p-button>
-          <p-button
-            styleClass="p-button-danger mr-2"
-            icon="pi pi-trash"
-          ></p-button>
+          <p-button label="Add Student" icon="bi bi-pencil-square" styleClass="p-button-success mr-2" (click)="createStudent()"></p-button>
         </ng-template>
       </p-toolbar>
     </div>
@@ -29,20 +20,18 @@
         [rowsPerPageOptions]="[10, 25, 50]"
         [paginator]="true"
         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-        [globalFilterFields]="['name']"
+        [globalFilterFields]="['className']"
       >
-        <ng-template pTemplate="caption">
-          <div class="flex">
-            <button
-              pButton
-              label="Clear"
-              class="p-button-outlined"
-              icon="pi pi-filter-slash"
-              (click)="clear()"
-            ></button>
-            <span class="p-input-icon-left ml-auto"> </span>
-          </div>
-        </ng-template>
+      <ng-template pTemplate="caption">
+        <div class="flex">
+            <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear()"></button>
+            <span class="p-input-icon-left ml-auto">
+              <div class="filter">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="dt1.filterGlobal(getInputValue($event), 'contains')" placeholder="Search keyword" /></div>
+            </span>
+        </div>
+    </ng-template>
 
         <ng-template pTemplate="header">
           <tr>
@@ -71,6 +60,9 @@
             <th style="min-width: 15rem">
               <div class="flex align-items-center">Status</div>
             </th>
+            <th style="min-width: 15rem">
+              <div class="flex align-items-center">Action</div>
+            </th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-classStudent let-rowIndex="rowIndex">
@@ -93,6 +85,10 @@
             <td>
               <p style="color: green;" *ngIf="classStudent.status == 1">Enable</p>
               <p style="color: red;" *ngIf="classStudent.status == 0">Disable</p>
+            </td>
+            <td>
+              <p-button  icon="pi pi-trash" styleClass="p-button-danger mr-2" (click)="deleteStudent(classStudent.id)"></p-button>
+              <p-button  icon="bi bi-pencil-square" styleClass="p-button-outlined mr-2" (click)="updateStudent(classStudent)"></p-button>
             </td>
           </tr>
         </ng-template>

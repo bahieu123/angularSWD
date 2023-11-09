@@ -1,6 +1,6 @@
+import { Component, OnInit } from '@angular/core';
 import { GetAssignment, UpdateAssignment } from 'src/main/model/assignmentModel';
 import { AssignmentServiceService } from './../../service/AssignmentService.service';
-import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -45,6 +45,13 @@ export class AssignmentComponent implements OnInit {
     this._assignmentServiceService.deleteAssignment(id).subscribe(() => {
       this.getAllAssignmnet();
     })
+  }
+
+  getInputValue(event: Event): string {
+    if (event.target instanceof HTMLInputElement) {
+      return event.target.value;
+    }
+    return '';
   }
 
   clear(): void {

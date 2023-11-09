@@ -37,7 +37,7 @@ CreateSubject(body: CreateAndUpdateSubject): Observable<any> {
   return this.http.post<any>("http://localhost:8080/api/subjects/AddNew", body, { headers });
  }
 
- UpdateSubject(body: UpdateSubject): Observable<any> {
+ UpdateSubject(body: ListSubject): Observable<any> {
   const token = localStorage.getItem('token');
   if (!token) {
     throw new Error('Token not found. Please authenticate first.');

@@ -1,0 +1,120 @@
+<form>
+  <div class="create-body1" *ngIf="username != null;else create">
+    <div class="create-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>update User</h2>
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-1">
+            <div class="btn-back ">
+              <a class="backDetail" (click)="saveUser()"><i class="fa fa-arrow-left"></i> Update</a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="btn-back btn-back1">
+              <a class="backDetail" (click)="back()"><i class="fa fa-arrow-left"></i> Quay lại</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="create-body">
+      <div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="col-form-label ">Name User <span class="text-required">*</span></label><br>
+              <input type="text" pInputText [style.width.%]="90" name="username" [(ngModel)]="detailuser.username"/>
+            </div>
+            <div class="col-md-6">
+              <label class="col-form-label ">Name <span class="text-required">*</span></label><br>
+              <input type="text" [readonly]="true" pInputText [style.width.%]="90" name="namename" [(ngModel)]="detailuser.name"/>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="col-form-label ">Email <span class="text-required">*</span></label><br>
+              <input type="text" pInputText  [style.width.%]="90" name="emaill" [(ngModel)]="detailuser.email"/>
+            </div>
+            <div class="col-md-6">
+              <label class="col-form-label ">Role <span class="text-required">*</span></label><br>
+              <p-dropdown [(ngModel)]="detailuser.role"
+                         name="rolename"
+                         [options]="listRole"
+                         optionLabel="name"
+                         optionValue="id"
+                         [readonly]="true"
+                         [showClear]="true"
+                         placeholder="Select a Role"
+                         ></p-dropdown>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #create>
+    <div class="create-body1" >
+      <div class="create-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Create User</h2>
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-1">
+              <div class="btn-back ">
+                <a class="backDetail" ><i class="fa fa-arrow-left"></i> Create</a>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="btn-back btn-back1">
+                <a class="backDetail" (click)="back()"><i class="fa fa-arrow-left"></i> Quay lại</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="create-body">
+        <div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <label class="col-form-label ">Name User <span class="text-required">*</span></label><br>
+                <input type="text" pInputText formControlName="text" [style.width.%]="90"/>
+              </div>
+              <div class="col-md-6">
+                <label class="col-form-label ">Subject Name <span class="text-required">*</span></label><br>
+                <input type="text" pInputText formControlName="text" [style.width.%]="90"/>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-3">
+                <label class="col-form-label ">Start Date <span class="text-required">*</span></label><br>
+                <input type="date" [style.width.%]="80">
+              </div>
+              <div class="col-md-3">
+                <label class="col-form-label ">Subject Code <span class="text-required">*</span></label><br>
+                <input type="text" pInputText formControlName="text" [style.width.%]="80"/>
+              </div>
+              <div class="col-md-6">
+                <label class="col-form-label ">Description <span class="text-required">*</span></label><br>
+                <textarea rows="5" cols="30" pInputTextarea [style.width.%]="90"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</form>

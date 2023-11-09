@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   AddNewAssignment,
-  GetAssignment,
   UpdateAssignment,
 } from 'src/main/model/assignmentModel';
 import { ListSubject } from 'src/main/model/models';
 import { AssignmentServiceService } from 'src/service/AssignmentService.service';
 import { SubjectServiceService } from 'src/service/subjectService.service';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-CreateAndUpdate',
@@ -64,10 +64,15 @@ export class CreateAndUpdateComponent implements OnInit {
 
 
   saveAssignment(): void {
+    debugger
+    const jwtHelper = new JwtHelperService();
     const token = localStorage.getItem('token');
     if (!token) {
       throw new Error('Token not found. Please authenticate first.');
     }
+    const decodedToken = jwtHelper.decodeToken(token);
+    this.inputCreate.created_by = decodedToken.preferred_username;
+    this.inputUpdate.updated_by = decodedToken.preferred_username;
     if (this.assignmentId) {
       this.inputUpdate.id = this.assignmentId;
       this._assignmentService

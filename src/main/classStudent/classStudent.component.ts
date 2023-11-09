@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GetClassStudent } from '../model/classStudentModel';
+import { GetClassStudent, UpdateClassStudent } from '../model/classStudentModel';
 import { ClassStudentServiceService } from 'src/service/ClassStudentService.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-classStudent',
@@ -10,7 +11,7 @@ import { ClassStudentServiceService } from 'src/service/ClassStudentService.serv
 export class ClassStudentComponent implements OnInit {
   listClassStudent: GetClassStudent[] = [];
 
-  constructor(private _classStudentServiceService: ClassStudentServiceService) {}
+  constructor(private _classStudentServiceService: ClassStudentServiceService, private _router: Router) { }
 
   ngOnInit() {
     this.getAllClass();
@@ -22,6 +23,32 @@ export class ClassStudentComponent implements OnInit {
       console.log(this.listClassStudent);
     });
   }
+
+  createStudent(): void {
+    this._router.navigate(['/main/student/createUpdate']);
+  }
+
+  updateStudent(data: UpdateClassStudent): void {
+    this._router.navigate(['/main/student/createUpdate',
+      {
+        id: data.id
+      }
+    ]);
+  }
+
+  deleteStudent(id: number): void {
+    this._classStudentServiceService.deleteStudent(id).subscribe(() => {
+      this.getAllClass();
+    })
+  }
+
+  getInputValue(event: Event): string {
+    if (event.target instanceof HTMLInputElement) {
+      return event.target.value;
+    }
+    return '';
+  }
+
 
   clear(): void {
     this.getAllClass();

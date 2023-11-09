@@ -16,3 +16,28 @@ export class GetClass {
   subjectCode: string | undefined;
   subjectName: string | undefined;
 }
+
+export class AddNewClass {
+  name: string | undefined;
+  description: string | undefined;
+  semester_id: number | undefined;
+  teacher_id: number | undefined;
+  subject_id: number | undefined;
+  start_date: Date | undefined;
+  end_date: Date | undefined;
+  status: number | undefined;
+  created_by: string | undefined;
+}
+
+export class UpdateClass {
+  id: number | undefined;
+  name: string | undefined;
+  description: string | undefined;
+  semester_id: number | undefined;
+  teacher_id: number | undefined;
+  subject_id: number | undefined;
+  start_date: Date | undefined;
+  end_date: Date | undefined;
+  status: number | undefined;
+  updated_by: string | undefined;
+}
