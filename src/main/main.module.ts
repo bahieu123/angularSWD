@@ -39,6 +39,9 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CheckboxModule } from 'primeng/checkbox';
 import { CreateAndUpdateUserComponent } from './user/CreateAndUpdateUser/CreateAndUpdateUser.component';
+import { IssueComponent } from './issue/issue.component';
+import { IssueSettingComponent } from './issueSetting/issueSetting.component';
+import { CreateAndUpdateIssueComponent } from './issue/CreateAndUpdateIssue/CreateAndUpdateIssue.component';
 
 @NgModule({
   imports: [
@@ -82,7 +85,10 @@ import { CreateAndUpdateUserComponent } from './user/CreateAndUpdateUser/CreateA
     MilestoneComponent,
     CreateAndUpdateMilestoneComponent,
     CreateAndUpdateComponent,
-    CreateAndUpdateUserComponent
+    CreateAndUpdateUserComponent,
+    IssueComponent,
+    IssueSettingComponent,
+    CreateAndUpdateIssueComponent
 
   ]
 })

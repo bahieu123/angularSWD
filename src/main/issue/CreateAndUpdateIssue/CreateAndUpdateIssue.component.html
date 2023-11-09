@@ -1,0 +1,152 @@
+ <form [formGroup]="formGroup">
+
+  <div class="create-body1" *ngIf="issueId;else create">
+    <div class="create-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Update Issue</h2>
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-1">
+            <p-button label="Update" icon="bi bi-pencil-square" styleClass="p-button-success mr-2" (click)="saveIssue()"></p-button>
+          </div>
+          <div class="col-md-3">
+            <p-button label="Back" icon="bi bi-arrow-left-circle" styleClass="p-button-outlined mr-2" (click)="back()"></p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="create-body">
+      <div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="col-form-label ">Description <span class="text-required">*</span></label><br>
+              <textarea [(ngModel)]="inputUpdate.description" required rows="2" cols="30" pInputTextarea
+                formControlName="description" [style.width.%]="90"></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="col-form-label">Work process <span class="text-required">*</span></label><br>
+              <select
+                style="width: 90%; height: 30px;">
+                <option disabled selected>Pick work process</option>
+                <option [value]="10">10%</option>
+                <option [value]="20">20%</option> 
+                <option [value]="30">30%</option> 
+                <option [value]="40">40%</option> 
+                <option [value]="50">50%</option> 
+                <option [value]="60">60%</option> 
+                <option [value]="70">70%</option> 
+                <option [value]="80">80%</option> 
+                <option [value]="90">90%</option>
+                <option [value]="100">100%</option> 
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #create>
+    <div class="create-body1">
+      <div class="create-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Create Issue</h2>
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-1">
+              <p-button label="Create" icon="bi bi-plus-square" styleClass="p-button-success mr-2"
+                (click)="saveIssue()"></p-button>
+            </div>
+            <div class="col-md-3">
+              <p-button label="Back" icon="bi bi-arrow-left-circle" styleClass="p-button-outlined mr-2"
+                (click)="back()"></p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="create-body">
+        
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="col-form-label ">Description <span class="text-required">*</span></label><br>
+              <textarea [(ngModel)]="inputCreate.description" required rows="2" cols="30" pInputTextarea
+                formControlName="description" [style.width.%]="90"></textarea>
+            </div>
+          </div>
+        </div>
+       
+        
+        
+          
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <label class="col-form-label ">Assigness <span class="text-required">*</span></label><br>
+                <select
+                  style="width: 90%; height: 30px;">
+                  <option disabled selected>Assigness</option>
+                  <option [value]="1">Hieu</option>
+                  <option [value]="2">John</option> 
+                  <option [value]="3">Crew</option> 
+                  <option [value]="4">Gtwn</option> 
+                 
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <label class="col-form-label ">Assigner <span class="text-required">*</span></label><br>
+                <select
+                  style="width: 90%; height: 30px;">
+                  <option disabled selected>Assigner</option>
+                  <option [value]="1">Hieu</option>
+                  <option [value]="2">John</option> 
+                  <option [value]="3">Crew</option> 
+                  <option [value]="4">Gtwn</option> 
+                 
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <label class="col-form-label">Work process <span class="text-required">*</span></label><br>
+                <select
+                  style="width: 90%; height: 30px;">
+                  <option disabled selected>Pick work process</option>
+                  <option [value]="10">10%</option>
+                  <option [value]="20">20%</option> 
+                  <option [value]="30">30%</option> 
+                  <option [value]="40">40%</option> 
+                  <option [value]="50">50%</option> 
+                  <option [value]="60">60%</option> 
+                  <option [value]="70">70%</option> 
+                  <option [value]="80">80%</option> 
+                  <option [value]="90">90%</option>
+                  <option [value]="100">100%</option> 
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        </ng-template>
+</form>

@@ -18,6 +18,9 @@ import { CreateAndUpdateClassComponent } from './class/CreateAndUpdateClass/Crea
 
 import { MilestoneComponent } from './milestone/milestone.component';
 import { CreateAndUpdateMilestoneComponent } from './milestone/CreateAndUpdateMilestone/CreateAndUpdateMilestone.component';
+import { IssueComponent } from './issue/issue.component';
+import { CreateAndUpdateIssueComponent } from './issue/CreateAndUpdateIssue/CreateAndUpdateIssue.component';
+import { IssueSettingComponent } from './issueSetting/issueSetting.component';
 //import { CreateAndUpdateComponent } from './assignment/CreateAndUpdate/CreateAndUpdate.component';
 //import { CreateAndUpdateUserComponent } from './user/CreateAndUpdateUser/CreateAndUpdateUser.component';
 
@@ -41,6 +44,9 @@ import { CreateAndUpdateMilestoneComponent } from './milestone/CreateAndUpdateMi
                   {path:'user/DetailUser',component: CreateAndUpdateUserComponent},
                   {path:'milestone',component: MilestoneComponent},
                   {path:'milestone/detail',component: CreateAndUpdateMilestoneComponent},
+                  {path:'issue',component: IssueComponent},
+                  {path:'issue/createUpdate',component: CreateAndUpdateIssueComponent},
+                  {path:'issueSetting',component: IssueSettingComponent},
                   {path:'user/detail',component: CreateAndUpdateUserComponent},
                 ]
           }
