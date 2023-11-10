@@ -39,8 +39,8 @@
           <div class="row">
             <div class="col-md-6">
               <label class="col-form-label ">Subject <span class="text-required">*</span></label><br>
-              <select [(ngModel)]="inputUpdate.subject_id" formControlName="subject_id"
-                style="width: 90%;height: 30px;">
+              <select pInputText [(ngModel)]="inputUpdate.subject_id" formControlName="subject_id"
+                style="width: 90%;height: 60px;">
                 <option disabled selected>Pick a subject</option>
                 <option *ngFor="let item of listSubject" [value]="item.id">{{ item.subject_code + "-"
                   +item.subject_name}}</option>
@@ -93,8 +93,8 @@
             <div class="row">
               <div class="col-md-6">
                 <label class="col-form-label ">Subject <span class="text-required">*</span></label><br>
-                <select [(ngModel)]="inputCreate.subject_id" formControlName="subject_id"
-                  style="width: 90%;height: 30px;">
+                <select pInputText [(ngModel)]="inputCreate.subject_id" formControlName="subject_id"
+                  style="width: 90%;height: 60px;">
                   <option disabled selected>Pick a subject</option>
                   <option *ngFor="let item of listSubject" [value]="item.id">{{ item.subject_code + "-"
                     +item.subject_name}}</option>

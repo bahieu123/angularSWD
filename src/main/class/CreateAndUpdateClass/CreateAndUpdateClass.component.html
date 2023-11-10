@@ -31,27 +31,27 @@
           </div>
           <div class="col-md-6">
             <label class="col-form-label ">Description<span class="text-required">*</span></label><br>
-            <textarea [(ngModel)]="inputUpdate.description" required rows="2" cols="30" pInputTextarea
+            <textarea [(ngModel)]="inputUpdate.description" required rows="2" pInputText cols="30" pInputTextarea
               formControlName="description" [style.width.%]="90"></textarea>
           </div>
           <div class="col-md-6">
             <label class="col-form-label ">Semester<span class="text-required">*</span></label><br>
-            <select [(ngModel)]="inputUpdate.semester_id" formControlName="semester_id"
-              style="width: 90%;height: 40px;">
+            <select pInputText [(ngModel)]="inputUpdate.semester_id" formControlName="semester_id"
+              style="width: 90%;height: 60px;">
               <option disabled selected>Pick a semester</option>
               <option *ngFor="let item of ListSetting" [value]="item.code">{{ item.value }}</option>
             </select>
           </div>
           <div class="col-md-6">
             <label class="col-form-label ">Teacher<span class="text-required">*</span></label><br>
-            <select [(ngModel)]="inputUpdate.teacher_id" formControlName="teacher_id" style="width: 90%;height: 40px;">
+            <select pInputText [(ngModel)]="inputUpdate.teacher_id" formControlName="teacher_id" style="width: 90%;height: 60px;">
               <option disabled selected>Pick a teacher</option>
               <option *ngFor="let item of ListUser" [value]="item.id">{{ item.name }}</option>
             </select>
           </div>
           <div class="col-md-6">
             <label class="col-form-label ">Subject<span class="text-required">*</span></label><br>
-            <select [(ngModel)]="inputUpdate.subject_id" formControlName="subject_id" style="width: 90%;height: 40px;">
+            <select pInputText [(ngModel)]="inputUpdate.subject_id" formControlName="subject_id" style="width: 90%;height: 60px;">
               <option disabled selected>Pick a teacher</option>
               <option *ngFor="let item of ListSubject " [value]="item.id">{{item.subject_code + "-" +item.subject_name}}
               </option>
@@ -66,9 +66,9 @@
           <div class="col-md-6">
             <label class="col-form-label ">Status<span class="text-required">*</span></label><br>
             <input [(ngModel)]="inputUpdate.status" name="status" ng-control="status" type="radio" [value]="1" required
-              type="radio" pInputText formControlName="status" /> Enable
+              type="radio" formControlName="status" /> Enable
             <input [(ngModel)]="inputUpdate.status" name="status" ng-control="status" type="radio" [value]="0" required
-              type="radio" pInputText formControlName="status" /> Disable
+              type="radio" formControlName="status" /> Disable
           </div>
         </div>
       </div>
@@ -111,24 +111,24 @@
             </div>
             <div class="col-md-6">
               <label class="col-form-label ">Semester<span class="text-required">*</span></label><br>
-              <select [(ngModel)]="inputCreate.semester_id" formControlName="semester_id"
-                style="width: 90%;height: 40px;">
+              <select pInputText [(ngModel)]="inputCreate.semester_id" formControlName="semester_id"
+                style="width: 90%;height: 60px;">
                 <option disabled selected>Pick a semester</option>
                 <option *ngFor="let item of ListSetting" [value]="item.code">{{ item.value }}</option>
               </select>
             </div>
             <div class="col-md-6">
               <label class="col-form-label ">Teacher<span class="text-required">*</span></label><br>
-              <select [(ngModel)]="inputCreate.teacher_id" formControlName="teacher_id"
-                style="width: 90%;height: 40px;">
+              <select pInputText [(ngModel)]="inputCreate.teacher_id" formControlName="teacher_id"
+                style="width: 90%;height: 60px;">
                 <option disabled selected>Pick a teacher</option>
                 <option *ngFor="let item of ListUser" [value]="item.id">{{ item.name }}</option>
               </select>
             </div>
             <div class="col-md-6">
               <label class="col-form-label ">Subject<span class="text-required">*</span></label><br>
-              <select [(ngModel)]="inputCreate.subject_id" formControlName="subject_id"
-                style="width: 90%;height: 40px;">
+              <select pInputText [(ngModel)]="inputCreate.subject_id" formControlName="subject_id"
+                style="width: 90%;height: 60px;">
                 <option disabled selected>Pick a teacher</option>
                 <option *ngFor="let item of ListSubject " [value]="item.id">{{item.subject_code + "-"
                   +item.subject_name}}</option>
@@ -144,9 +144,9 @@
             <div class="col-md-6">
               <label class="col-form-label ">Status<span class="text-required">*</span></label><br>
               <input [(ngModel)]="inputCreate.status" name="status" ng-control="status" type="radio" [value]="1"
-                required type="radio" pInputText formControlName="status" /> Enable
+                required type="radio" formControlName="status" /> Enable
               <input [(ngModel)]="inputCreate.status" name="status" ng-control="status" type="radio" [value]="0"
-                required type="radio" pInputText formControlName="status" /> Disable
+                required type="radio" formControlName="status" /> Disable
             </div>
           </div>
         </div>
