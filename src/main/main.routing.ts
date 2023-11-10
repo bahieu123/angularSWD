@@ -27,34 +27,35 @@ import { IssueSettingComponent } from './issueSetting/issueSetting.component';
 
 @NgModule({
   imports: [
-      RouterModule.forChild([
-          {path: 'main',component: MainComponent,
-                children:[
-                  {path:'dashboard',component: DashboardComponent},
-                  {path:'user',component: UserComponent},
-                  {path:'class',component: ClassComponent},
-                  {path:'class/createUpdate',component: CreateAndUpdateClassComponent},
-                  {path:'project',component: ProjectComponent},
-                  {path:'subject',component: SubjectComponent},
-                  {path:'subject/DetailSubject',component: CreateAndUpdateSubjectComponent},
-                  {path:'assignment',component: AssignmentComponent},
-                  // {path:'assignment/createUpdate',component: CreateAndUpdateComponent},
-                  {path:'student',component: ClassStudentComponent},
-                  {path:'student/createUpdate',component: CreateAndUpdateStudentComponent},
-                  {path:'user/DetailUser',component: CreateAndUpdateUserComponent},
-                  {path:'milestone',component: MilestoneComponent},
-                  {path:'milestone/detail',component: CreateAndUpdateMilestoneComponent},
-                  {path:'issue',component: IssueComponent},
-                  {path:'issue/createUpdate',component: CreateAndUpdateIssueComponent},
-                  {path:'issueSetting',component: IssueSettingComponent},
-                  {path:'user/detail',component: CreateAndUpdateUserComponent},
-                ]
-          }
-      ])
+    RouterModule.forChild([
+      {
+        path: 'main', component: MainComponent,
+        children: [
+          { path: 'dashboard', component: DashboardComponent },
+          { path: 'user', component: UserComponent },
+          { path: 'class', component: ClassComponent },
+          { path: 'class/createUpdate', component: CreateAndUpdateClassComponent },
+          { path: 'project', component: ProjectComponent },
+          { path: 'subject', component: SubjectComponent },
+          { path: 'subject/DetailSubject', component: CreateAndUpdateSubjectComponent },
+          { path: 'assignment', component: AssignmentComponent },
+          { path: 'assignment/createUpdate', component: CreateAndUpdateComponent },
+          { path: 'student', component: ClassStudentComponent },
+          { path: 'student/createUpdate', component: CreateAndUpdateStudentComponent },
+          { path: 'user/DetailUser', component: CreateAndUpdateUserComponent },
+          { path: 'milestone', component: MilestoneComponent },
+          { path: 'milestone/detail', component: CreateAndUpdateMilestoneComponent },
+          { path: 'issue', component: IssueComponent },
+          { path: 'issue/createUpdate', component: CreateAndUpdateIssueComponent },
+          { path: 'issueSetting', component: IssueSettingComponent },
+          { path: 'user/detail', component: CreateAndUpdateUserComponent },
+        ]
+      }
+    ])
   ],
   exports: [
-      RouterModule
+    RouterModule
   ]
 })
 
-export class MainRoutingModel{}
+export class MainRoutingModel { }

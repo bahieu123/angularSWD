@@ -78,7 +78,6 @@ import { CreateAndUpdateIssueComponent } from './issue/CreateAndUpdateIssue/Crea
     CreateAndUpdateSubjectComponent,
 
     AssignmentComponent,
-    CreateAndUpdateComponent,
     CreateAndUpdateStudentComponent,
     CreateAndUpdateClassComponent,
 
