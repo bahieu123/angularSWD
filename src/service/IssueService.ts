@@ -28,7 +28,7 @@ getAllIssue():Observable<GetIssue[]>{
 }
 CreateIssue(body: CreateIssue): Observable<any> {
   
-  const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHAiOjY4ODMzNzM5NDUsImlhdCI6MTY5OTM3Mzk0NSwianRpIjoiMDI4ZTA2YTMtZDA3Yi00M2Q4LTk3YjItNGE2YjdkY2FhMDlkIiwiaXNzIjoib3JkZXItYXBpIiwiYXVkIjoib3JkZXItYXBwIiwic3ViIjoiaGlldTNAZ21haWwuY29tIiwicm9sIjpbIjIiXSwicHJlZmVycmVkX3VzZXJuYW1lIjoiaGlldTNAZ21haWwuY29tIiwiZW1haWwiOiJoaWV1c2xtbW0wMkBnbWFpbC5jb20ifQ.DueDnbKGQ1kcc6r5hfNAQ-KDnsZwb2q0Px-QK4q3JSBkKAF2PdFKAm5zvQoaSOfurCiqClS6oMV5JB3m_tvXQQ';
+  const token = localStorage.getItem('token');
 
   const headers = new HttpHeaders({
     'Authorization': `Bearer ${token}`,
@@ -38,7 +38,7 @@ CreateIssue(body: CreateIssue): Observable<any> {
 }
 
  UpdateIssue(body: UpdateIssue): Observable<any> {
-  const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHAiOjY4ODMzNzM5NDUsImlhdCI6MTY5OTM3Mzk0NSwianRpIjoiMDI4ZTA2YTMtZDA3Yi00M2Q4LTk3YjItNGE2YjdkY2FhMDlkIiwiaXNzIjoib3JkZXItYXBpIiwiYXVkIjoib3JkZXItYXBwIiwic3ViIjoiaGlldTNAZ21haWwuY29tIiwicm9sIjpbIjIiXSwicHJlZmVycmVkX3VzZXJuYW1lIjoiaGlldTNAZ21haWwuY29tIiwiZW1haWwiOiJoaWV1c2xtbW0wMkBnbWFpbC5jb20ifQ.DueDnbKGQ1kcc6r5hfNAQ-KDnsZwb2q0Px-QK4q3JSBkKAF2PdFKAm5zvQoaSOfurCiqClS6oMV5JB3m_tvXQQ';
+  const token = localStorage.getItem('token');
   if (!token) {
     throw new Error('Token not found. Please authenticate first.');
   }
@@ -64,7 +64,7 @@ CreateIssue(body: CreateIssue): Observable<any> {
 }
 
 IssueDelete(id: number | undefined): Observable<any> {
-  const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHAiOjY4ODMzNzM5NDUsImlhdCI6MTY5OTM3Mzk0NSwianRpIjoiMDI4ZTA2YTMtZDA3Yi00M2Q4LTk3YjItNGE2YjdkY2FhMDlkIiwiaXNzIjoib3JkZXItYXBpIiwiYXVkIjoib3JkZXItYXBwIiwic3ViIjoiaGlldTNAZ21haWwuY29tIiwicm9sIjpbIjIiXSwicHJlZmVycmVkX3VzZXJuYW1lIjoiaGlldTNAZ21haWwuY29tIiwiZW1haWwiOiJoaWV1c2xtbW0wMkBnbWFpbC5jb20ifQ.DueDnbKGQ1kcc6r5hfNAQ-KDnsZwb2q0Px-QK4q3JSBkKAF2PdFKAm5zvQoaSOfurCiqClS6oMV5JB3m_tvXQQ';
+  const token = localStorage.getItem('token');
   if (!token) {
     throw new Error('Token not found. Please authenticate first.');
   }
